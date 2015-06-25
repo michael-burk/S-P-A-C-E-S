@@ -28,6 +28,8 @@ struct particle
 StructuredBuffer<particle> pData;
 
 StructuredBuffer<int> divide;
+StructuredBuffer<float2> closeLoop;
+StructuredBuffer<float3> resetData;
 
 float radius = 0.05f;
 
@@ -93,90 +95,112 @@ float1 mapRange(float1 value, float from1,float to1,float from2, float to2){
 }
 
 
-[maxvertexcount(4)]
+[maxvertexcount(16)]
 void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 {
 	vs2ps output;
-	
-	//
-	// Emit two new triangles
-	//
 	output.iv2 = input[0].iv2;
 	
-	float3 tangent = input[1].PosWVP.xyz - input[0].PosWVP.xyz;
-
-	
-	float3 normal = normalize(float3(tangent.z, -tangent.x, 0));
-	normal *= 0.1;
-
-	tangent *= radius*0.6;
-	
-	for(int k=0; k<2; k++)
-	{
-		for(int i=0; i<2; i++)
-		{
-			
-			float3 position;
-			
-
-			
-			if(i == 0){
-				position = -normal * radius;
-				position = mul( position, (float3x3)tVI ) + (input[1].PosWVP.xyz + tangent);
-			}
-			
-			
-			if(i == 1){
-				position = normal * radius;
-				position = mul( position, (float3x3)tVI ) + (input[1].PosWVP.xyz + tangent);
-			}
-			
-			
-			
-			float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
-			
-			
-			
-			output.PosWVP = mul( float4(position,1.0), tWVP );
-			output.TexCd = g_texcoords[i];
-			output.Vcol = input[0].Vcol;
-			
-			
-			SpriteStream.Append(output);
-		}
+	int satisfactionCount = 1;
 		
-		for(int j=2; j<4; j++)
-		{
-			
-			float3 position;
-			
-			
-			if(j == 2){
-				position = -normal * radius;
-				position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz - tangent);
-			}
-			
-			
-			if(j == 3){
-				position = normal * radius;
-				position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz -+ tangent);
-			}
-			
-			
-		
-			
-			float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
-			
-
-			output.PosWVP = mul( float4(position,1.0), tWVP );		
-			output.TexCd = g_texcoords[j];
-			output.Vcol = input[0].Vcol;
-			
-			
-			SpriteStream.Append(output);
-		}
+	if(closeLoop[input[0].iv2].x == 1){
+		satisfactionCount = 2;
 	}
-	SpriteStream.RestartStrip();
+	
+	for(int m = 0; m < satisfactionCount; m++){
+		
+		
+		//
+		// Emit two new triangles
+		//
+		
+		
+		float3 p0 = input[0].PosWVP.xyz;
+		float3 p1 = input[1].PosWVP.xyz;
+		
+		// close loop
+		if(m == 1){
+			p1 = pData[ closeLoop[input[0].iv2].y ].pos;
+		}
+		
+		
+		float3 tangent = p1 - p0;
+		
+	
+		float3 normal = normalize(float3(tangent.z, -tangent.x, 0));
+		normal *= 0.1;
+	
+		tangent *= radius*0.6;
+		
+		for(int k=0; k<2; k++)
+		{
+			for(int i=0; i<2; i++)
+			{
+				
+				float3 position;
+				
+	
+				
+				if(i == 0){
+					position = -normal * radius;
+					position = mul( position, (float3x3)tVI ) + (p1 + tangent);
+				}
+				
+				
+				if(i == 1){
+					position = normal * radius;
+					position = mul( position, (float3x3)tVI ) + (p1 + tangent);
+				}
+				
+				
+				
+				float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
+				
+				
+				
+				output.PosWVP = mul( float4(position,1.0), tWVP );
+				output.TexCd = g_texcoords[i];
+				output.Vcol = input[0].Vcol;
+				
+				
+				SpriteStream.Append(output);
+			}
+			
+			for(int j=2; j<4; j++)
+			{
+				
+				float3 position;
+				
+				
+				if(j == 2){
+					position = -normal * radius;
+					position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz - tangent);
+				}
+				
+				
+				if(j == 3){
+					position = normal * radius;
+					position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz -+ tangent);
+				}
+				
+				
+			
+				
+				float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
+				
+	
+				output.PosWVP = mul( float4(position,1.0), tWVP );		
+				output.TexCd = g_texcoords[j];
+				output.Vcol = input[0].Vcol;
+				
+				
+				SpriteStream.Append(output);
+			}
+		}
+		
+		SpriteStream.RestartStrip();
+	}
+	
 }
 
 

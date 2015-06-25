@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="0" scrolly="2955" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="5085" scrolly="2580" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="2985" top="375" width="10455" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -30,7 +30,7 @@
    <PIN pinname="Input Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="291" stayontop="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="291" stayontop="0">
    <BOUNDS type="Node" left="8850" top="9045" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="8850" top="9045" width="6000" height="4500">
@@ -46,7 +46,7 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Threshold">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="344" stayontop="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="344" stayontop="0">
    <BOUNDS type="Node" left="8625" top="11130" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="8625" top="11130" width="6000" height="4500">
@@ -1031,5 +1031,11 @@
    <LINK srcnodeid="645" srcpinname="Y Output Value" dstnodeid="644" dstpinname="Input 2">
    </LINK>
    <LINK srcnodeid="631" srcpinname="PositionXY" dstnodeid="630" dstpinname="TranslateXY">
+   </LINK>
+   <LINK srcnodeid="528" srcpinname="Y Output Value" dstnodeid="634" dstpinname="Texture SizeXY" linkstyle="Bezier">
+   <LINKPOINT x="8895" y="10688">
+   </LINKPOINT>
+   <LINKPOINT x="3870" y="10688">
+   </LINKPOINT>
    </LINK>
    </PATCH>

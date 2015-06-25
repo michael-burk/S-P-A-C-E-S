@@ -91,8 +91,6 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 				
 				if(m == 1){
 					addition = closeLoop[iterator].y - iterator;
-					
-					
 				}
 				
 				float3 p1;
