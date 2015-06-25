@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p" locked="0" scrollx="825" scrolly="570" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="825" scrolly="570" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="3135" top="375" width="11490" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -163,7 +163,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Average Framerate|">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="59.96">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="435" systemname="IOBox (Value Advanced)">
@@ -334,22 +334,6 @@
    <PIN pinname="XYZ" slicecount="1" values="2">
    </PIN>
    </NODE>
-   <NODE systemname="VideoIn_PS3" filename="..\VideoIn_PS3.v4p" nodename="VideoIn_PS3.v4p" componentmode="Hidden" id="451" stayontop="1">
-   <BOUNDS type="Node" left="7440" top="3345" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Property Page" visible="1">
-   </PIN>
-   <PIN pinname="Average Framerate" visible="1">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   <BOUNDS type="Window" left="3630" top="0" width="15000" height="11115">
-   </BOUNDS>
-   </NODE>
-   <LINK srcnodeid="451" srcpinname="Average Framerate" dstnodeid="422" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="486" srcpinname="Output" dstnodeid="451" dstpinname="Property Page">
-   </LINK>
    <NODE componentmode="InABox" id="510" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="0" left="17520" top="3960" type="Node" width="0">
    </BOUNDS>
@@ -929,7 +913,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7980" top="5130" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -939,7 +923,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="639" srcpinname="Y Output Value" dstnodeid="638" dstpinname="Switch">
@@ -982,12 +966,6 @@
    </NODE>
    <LINK srcnodeid="637" srcpinname="Texture Out" dstnodeid="638" dstpinname="Input 2">
    </LINK>
-   <LINK srcnodeid="451" srcpinname="Texture Out" dstnodeid="638" dstpinname="Input 1" linkstyle="Bezier">
-   <LINKPOINT x="8040" y="4875">
-   </LINKPOINT>
-   <LINKPOINT x="8865" y="4875">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="638" srcpinname="Output" dstnodeid="362" dstpinname="Texture In">
    </LINK>
    <NODE systemname="Segment (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Segment (DX11.Geometry)" componentmode="Hidden" id="643">
@@ -995,5 +973,27 @@
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="643" srcpinname="Geometry Out" dstnodeid="636" dstpinname="Geometry">
+   </LINK>
+   <NODE systemname="VideoIn_PS3" filename="..\VideoIn_PS3.v4p" nodename="VideoIn_PS3" componentmode="Hidden" id="451" stayontop="1">
+   <BOUNDS type="Node" left="7440" top="3345" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Property Page" visible="1">
+   </PIN>
+   <PIN pinname="Average Framerate" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="3630" top="0" width="15000" height="11115">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="451" srcpinname="Average Framerate" dstnodeid="422" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="486" srcpinname="Output" dstnodeid="451" dstpinname="Property Page">
+   </LINK>
+   <LINK srcnodeid="451" srcpinname="Texture Out" dstnodeid="638" dstpinname="Input 1" linkstyle="Bezier">
+   <LINKPOINT x="8040" y="4875">
+   </LINKPOINT>
+   <LINKPOINT x="8865" y="4875">
+   </LINKPOINT>
    </LINK>
    </PATCH>
