@@ -785,7 +785,7 @@
    <NODE id="629" systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <PIN pinname="Transform In" visible="1" pintype="Input">
    </PIN>
-   <PIN pinname="XYZ" slicecount="1" pintype="Input" visible="1" values="0.24">
+   <PIN pinname="XYZ" slicecount="1" pintype="Input" visible="1" values="0.09">
    </PIN>
    <BOUNDS type="Node" left="3030" top="6810" width="100" height="100">
    </BOUNDS>
@@ -969,6 +969,8 @@
    <NODE systemname="Segment (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Segment (DX11.Geometry)" componentmode="Hidden" id="643">
    <BOUNDS type="Node" left="2880" top="7305" width="100" height="100">
    </BOUNDS>
+   <PIN pinname="Resolution" slicecount="1" values="21">
+   </PIN>
    </NODE>
    <LINK srcnodeid="643" srcpinname="Geometry Out" dstnodeid="636" dstpinname="Geometry">
    </LINK>

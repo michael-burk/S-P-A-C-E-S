@@ -20,6 +20,7 @@ StructuredBuffer<float2> connectorPos;
 StructuredBuffer<int> pinDown;
 StructuredBuffer<int> divide;
 StructuredBuffer<float> restLength;
+StructuredBuffer<float2> closeLoop;
 
 
 struct particle
@@ -77,45 +78,61 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		// http://cg.alexandra.dk/tag/spring-mass-system/
 		
 		// Satisfy Constrains
+		
+		int satisfactionCount = 1;
+		
+		if(closeLoop[iterator].x == 1){
+			satisfactionCount = 2;
+		}
+		
 		if(iterator != pCount-1){
-			
-			
-			float3 p1;
-			float3 p2;
-			float3 p1_to_p2;
-			float3 correctionVector;
-			float3 correctionVectorHalf;
-			float currentDistance;
-			
-			// Multiple iterations for better precision
-			for(int k = 0; k < 20; k++){
+	
+			for(int m = 0; m < satisfactionCount; m++){
 				
-				p1 = Output[iterator].pos;
-				p2 = Output[iterator+addition].pos;
-				
-				
-				p1_to_p2 =  p2 - p1;
-				currentDistance = length(p1_to_p2);
-				
-				if(currentDistance != 0){
-					saturate(currentDistance);
-					
-					correctionVector = mul(p1_to_p2, (1 - rest_length/currentDistance));
-					correctionVectorHalf = correctionVector * strength;
-					
-				if(connect){
-					Output[iterator].pos += correctionVectorHalf;
-					Output[iterator+addition].pos -= correctionVectorHalf;
-				}
+				if(m == 1){
+					addition = closeLoop[iterator].y - iterator;
 					
 					
 				}
 				
+				float3 p1;
+				float3 p2;
+				float3 p1_to_p2;
+				float3 correctionVector;
+				float3 correctionVectorHalf;
+				float currentDistance;
 				
+				rest_length = length( resetData[iterator+addition] - resetData[iterator]);
 				
+				// Multiple iterations for better precision
+				for(int k = 0; k < 20; k++){
+					
+					p1 = Output[iterator].pos;
+					p2 = Output[iterator+addition].pos;
+					
+					
+					p1_to_p2 =  p2 - p1;
+					currentDistance = length(p1_to_p2);
+					
+					if(currentDistance != 0){
+						saturate(currentDistance);
+						
+						correctionVector = mul(p1_to_p2, (1 - rest_length/currentDistance));
+						correctionVectorHalf = correctionVector * strength;
+						
+					if(connect){
+						Output[iterator].pos += correctionVectorHalf;
+						Output[iterator+addition].pos -= correctionVectorHalf;
+					}
+						
+						
+					}
+					
+					
+					
+				}
+			
 			}
-			
-			
 		}
 		
 		
