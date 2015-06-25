@@ -1,0 +1,11 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
+   <PATCH nodename="C:\Users\Michael\Desktop\S P A C E S\CollisionFeedback.v4p" systemname="CollisionFeedback" filename="C:\dhmd_epilog\scenes\Particles\CollisionFeedback.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="10875" top="1095" width="7920" height="10635">
+   </BOUNDS>
+   <PACK Name="VVVV.Packs" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="33.3.0">
+   </PACK>
+   <PACK Name="image" Version="0.2.0">
+   </PACK>
+   </PATCH>
