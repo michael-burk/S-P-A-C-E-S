@@ -3,11 +3,10 @@ float3 gravity;
 int pCount;
 bool doReturn = false;
 float swirlFactor = 0.00001;
-float steerAwayFactor = 0.1;
+float steerAwayFactor = .01;
 bool bounds;
 bool bounce;
 bool collision;
-//bool attractorSolo;
 float friction;
 float returnFactor;
 float2 contactTimeFactor;
@@ -35,7 +34,7 @@ StructuredBuffer<float3> gridPos;
 
 
 //Reset Position (xyz) and random damping (w)
-StructuredBuffer<float4> resetData;
+StructuredBuffer<float3> resetData;
 
 StructuredBuffer<float> radius;
 
@@ -222,43 +221,15 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		if(highlightTexture){
 			//		Velocity Damping:
-						v *= resetData[DTid.x].w * 1;
+				//		v *= resetData[DTid.x].w * 1;
 		}
 		else if(spray){
 			//		Velocity Damping:
-						v *= mapRange(resetData[DTid.x].w,0,1,0.9,1) * 1;
+				//		v *= mapRange(resetData[DTid.x].w,0,1,0.9,1) * 1;
 		} 
 		
 		
-		//Multiple attractors
-		uint count,dummy;
-		attrPos.GetDimensions(count,dummy);
-//		for(uint i=0 ; i<count; i++)
-//		{
-//			
-//			//attrVec = p - attrBuffer[i];
-//			float3 attrVec = attrPos[i] - p;
-//			if(length(attrVec)<=attrData[i].x){
-//				
-//				Output[DTid.x].collision = true;
-//				
-//				float attrRadius = attrData[i].x;
-//				float attrStrength = attrData[i].y;
-//				
-//				float attrForce = length(attrVec) / attrRadius;
-//				attrForce = 1 - attrForce;
-//				attrForce = saturate(attrForce);
-//				attrForce = pow(attrForce, 2);
-//				attrVec = attrVec * attrForce * attrStrength;
-				//transform attraction vector:
-				
-				//attrVec = mul(float4(attrVec,1), attrForceT).xyz;
-				//	!!!		//attrVec.y = 0;
-	//			v += attrVec;
-				
-//			}
-//		}
-		
+
 		// Texture Lookup
 		
 		float2 lookup1;
@@ -309,10 +280,9 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 			
 			float3 mappedVal1= mapRange3(float3(val.b,val.r,val.g),0,1,-1,1);
 			
-//			if (val.a < 0.5)
-//			{
-				steerAway = float3(mappedVal1.x,0,-mappedVal1.z);
-//			}
+
+			steerAway = float3(mappedVal1.x,0,-mappedVal1.z);
+
 			
 			
 			v += steerAway * steerAwayFactor;
@@ -367,7 +337,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		//Return to Start
 		if(doReturn)
 		{
-			float3 desired = gridPos[DTid.x].xyz  - Output[DTid.x].pos;
+			float3 desired = resetData[DTid.x].xyz  - Output[DTid.x].pos;
 			
 			desired *= returnFactor;
 			desired = desired - Output[DTid.x].vel;

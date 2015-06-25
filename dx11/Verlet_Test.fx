@@ -1,12 +1,9 @@
 bool reset;
 int pCount;
 float connectorCount; // Count of pinned particles
-float rest_length;
+
 float impulse;
 float strength;
-
-bool divide;
-bool pinDown;
 
 SamplerState mySampler : IMMUTABLE
 {
@@ -19,6 +16,10 @@ SamplerState mySampler : IMMUTABLE
 StructuredBuffer<float3> resetData;
 
 StructuredBuffer<float2> connectorPos;
+
+StructuredBuffer<int> pinDown;
+StructuredBuffer<int> divide;
+StructuredBuffer<float> restLength;
 
 
 struct particle
@@ -47,18 +48,13 @@ RWStructuredBuffer<particle> Output : BACKBUFFER;
 void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 {
 	
-	//	rest_length = 0.001;
 	
 	if (reset)
 	{
 		Output[DTid.x].vel = 0;
-				Output[DTid.x].pos = resetData[DTid.x].xyz;
-		////		Output[DTid.x].oldPos = float3(resetData[DTid.x].x,0,resetData[DTid.x].z);
-		//		Output[DTid.x].oldPos = resetData[DTid.x].xyz;
-		
+		Output[DTid.x].pos = resetData[DTid.x].xyz;
 		Output[DTid.x].oldPos = Output[DTid.x].pos;
-		//		Output[DTid.x].collision = false;
-		//		Output[DTid.x].timer = 0.1;
+
 	}
 	
 	else
@@ -70,36 +66,18 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		bool connect = true;
 		
+		float rest_length = restLength[iterator];
 		
-		if(pinDown){
-			if(DTid.x == 0){
-				Output[DTid.x].pos = float3(connectorPos[0].x,0,connectorPos[0].y);
-				
-			}
-			
-			if(iterator == pCount-1){
-				Output[DTid.x].pos = Output[DTid.x].pos = float3(connectorPos[1].x,0,connectorPos[1].y);
-			}
-			
-			// Don't connmect certain points, so individual strings appear
-			//		bool connect = true;
-			
-			if(divide)
-			if((iterator+1) % division == 0){
-				connect = false;
-			}
-			
+		if(divide[iterator] == 1 || divide[iterator+addition] == 1){
+			connect = false;
 		}
-		
-		
-		
 		
 		
 		// Spring mass system and verlet integration code from
 		// http://cg.alexandra.dk/tag/spring-mass-system/
 		
 		// Satisfy Constrains
-		if(connect && iterator != pCount-1){
+		if(iterator != pCount-1){
 			
 			
 			float3 p1;
@@ -125,10 +103,11 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 					correctionVector = mul(p1_to_p2, (1 - rest_length/currentDistance));
 					correctionVectorHalf = correctionVector * strength;
 					
-					if(connect){
-						Output[iterator].pos += correctionVectorHalf;
-						Output[iterator+addition].pos -= correctionVectorHalf;
-					}
+				if(connect){
+					Output[iterator].pos += correctionVectorHalf;
+					Output[iterator+addition].pos -= correctionVectorHalf;
+				}
+					
 					
 				}
 				
@@ -140,40 +119,24 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		}
 		
 		
-//		float3 v = Output[DTid.x].vel;
-//		
-//		//			// Limit
-//		//
-//		if(v.x > 0.015){
-//			v.x = 0.015;
-//		}
-//		if(v.x < -0.015){
-//			v.x = -0.015;
-//		}
-//		if(v.z > 0.015){
-//			v.z = 0.015;
-//		}
-//		if(v.z < -0.015){
-//			v.z = -0.015;
-//		}
-//		
-//		Output[DTid.x].vel = v;
 		
 		if(length(Output[DTid.x].pos - Output[DTid.x].oldPos) != 0){
 			// Verlet Integration
 			float3 temp = Output[DTid.x].pos;
-			//		float2 tempOut = Output[DTid.x].pos.xy +
-			//		(Output[DTid.x].pos.xy - Output[DTid.x].oldPos.xy)*(1-0.1)  +
-			//		Output[DTid.x].acc * 1;
 			float3 tempOut = Output[DTid.x].pos +
 			(Output[DTid.x].pos - Output[DTid.x].oldPos)*(1-impulse);
 			
 			
 			Output[DTid.x].oldPos = temp;
-			//		Output[DTid.x].acc = float2(0,0);
-			//		Output[DTid.x].pos = float3(tempOut.x,0,tempOut.y);
 			Output[DTid.x].pos = tempOut;
 			
+			
+		}
+		
+		
+		if(pinDown[iterator] == 1){
+			
+			Output[iterator].pos = resetData[iterator];
 			
 		}
 		

@@ -13,8 +13,6 @@ Texture2D texture2d;
 float4 c <bool color=true;> = 1;
 float velColMult = 1;
 float alpha;
-bool drawRadius;
-bool drawCollision;
 
 struct particle
 {
@@ -28,6 +26,8 @@ struct particle
 	float4 color;
 };
 StructuredBuffer<particle> pData;
+
+StructuredBuffer<int> divide;
 
 float radius = 0.05f;
 
@@ -104,9 +104,7 @@ void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 	output.iv2 = input[0].iv2;
 	
 	float3 tangent = input[1].PosWVP.xyz - input[0].PosWVP.xyz;
-//	if(length(tangent) >= 0.3){
-//		return;
-//	}
+
 	
 	float3 normal = normalize(float3(tangent.z, -tangent.x, 0));
 	normal *= 0.1;
@@ -146,6 +144,7 @@ void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 			
 			SpriteStream.Append(output);
 		}
+		
 		for(int j=2; j<4; j++)
 		{
 			
@@ -182,9 +181,14 @@ void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 
 
 float4 PS_Tex(vs2ps In): SV_Target
-{
+{	
+	float4 col;
 	
-	float4 col = float4(1,1,1,alpha);
+	if(divide[In.iv2] == 1 || divide[In.iv2 + 1] == 1){
+		 col = float4(0,0,0,0);
+	} else {
+		 col =c;
+	}
 	
 	
 	
