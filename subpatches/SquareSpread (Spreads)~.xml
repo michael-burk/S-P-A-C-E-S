@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SquareSpread (Spreads).v4p" scrollx="0" scrolly="0">
-   <BOUNDS height="10155" left="10605" top="2655" type="Window" width="11745">
+   <PATCH nodename="C:\Users\Michael\Downloads\SquareSpread (Spreads).v4p" scrollx="0" scrolly="0">
+   <BOUNDS height="10155" left="11955" top="2685" type="Window" width="11745">
    </BOUNDS>
    <NODE id="43" nodename="LinearSpread (Spreads)">
    <BOUNDS height="0" left="1020" top="7275" type="Node" width="0">
@@ -513,7 +513,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Phase">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="7.941">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="13" nodename="IOBOX (VALUE ADVANCED)">
@@ -581,7 +581,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="10" nodename="Multiply (Value)">
-   <BOUNDS height="0" left="1770" top="2715" type="Node" width="0">
+   <BOUNDS height="0" left="975" top="2820" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -593,9 +593,9 @@
    <LINK dstnodeid="12" dstpinname="Spread Count" srcnodeid="10" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="10" dstpinname="Input 2" linkstyle="Bezier" srcnodeid="15" srcpinname="Y Output Value">
-   <LINKPOINT x="11260" y="1630">
+   <LINKPOINT x="10995" y="1665">
    </LINKPOINT>
-   <LINKPOINT x="1775" y="1595">
+   <LINKPOINT x="1245" y="1665">
    </LINKPOINT>
    </LINK>
    <NODE id="9" nodename="Resample (Spreads)">
@@ -683,7 +683,7 @@
    </PIN>
    </NODE>
    <NODE id="4" nodename="Multiply (Value)">
-   <BOUNDS height="0" left="4290" top="2790" type="Node" width="0">
+   <BOUNDS height="0" left="3420" top="2820" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -707,9 +707,9 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="4" dstpinname="Input 2" linkstyle="Bezier" srcnodeid="15" srcpinname="Y Output Value">
-   <LINKPOINT x="11285" y="1655">
+   <LINKPOINT x="10995" y="1665">
    </LINKPOINT>
-   <LINKPOINT x="4270" y="1645">
+   <LINKPOINT x="3690" y="1665">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="27" dstpinname="Input" linkstyle="Bezier" srcnodeid="6" srcpinname="Output">
@@ -725,7 +725,7 @@
    </LINKPOINT>
    </LINK>
    <NODE id="3" nodename="Resample (Spreads)">
-   <BOUNDS height="0" left="7485" top="3135" type="Node" width="0">
+   <BOUNDS height="0" left="7245" top="3240" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -745,7 +745,7 @@
    </PIN>
    </NODE>
    <NODE id="1" nodename="Multiply (Value)">
-   <BOUNDS height="0" left="7830" top="2430" type="Node" width="0">
+   <BOUNDS height="0" left="7245" top="2820" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -763,31 +763,31 @@
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="1" dstpinname="Input 2" linkstyle="Bezier" srcnodeid="15" srcpinname="Y Output Value">
-   <LINKPOINT x="11190" y="1535">
+   <LINKPOINT x="10995" y="1665">
    </LINKPOINT>
-   <LINKPOINT x="7905" y="1405">
+   <LINKPOINT x="7515" y="1665">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="3" dstpinname="Input" linkstyle="Bezier" srcnodeid="25" srcpinname="Y Output Value">
-   <LINKPOINT x="8090" y="1825">
+   <LINKPOINT x="8010" y="1860">
    </LINKPOINT>
-   <LINKPOINT x="7435" y="1790">
+   <LINKPOINT x="7275" y="1860">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="29" dstpinname="Width" linkstyle="Bezier" srcnodeid="3" srcpinname="Output">
-   <LINKPOINT x="7435" y="5315">
+   <LINKPOINT x="7275" y="5385">
    </LINKPOINT>
-   <LINKPOINT x="7280" y="5350">
+   <LINKPOINT x="7200" y="5385">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="27" dstpinname="Width" linkstyle="Bezier" srcnodeid="3" srcpinname="Output">
-   <LINKPOINT x="7435" y="5315">
+   <LINKPOINT x="7275" y="5385">
    </LINKPOINT>
-   <LINKPOINT x="9440" y="5350">
+   <LINKPOINT x="9360" y="5385">
    </LINKPOINT>
    </LINK>
    <NODE id="0" nodename="Max (Value)">
-   <BOUNDS height="0" left="1395" top="1665" type="Node" width="0">
+   <BOUNDS height="0" left="390" top="1965" type="Node" width="0">
    </BOUNDS>
    <PIN pinname="Input Count" slicecount="1" values="4">
    </PIN>
@@ -803,36 +803,52 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="0" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="11" srcpinname="Count">
-   <LINKPOINT x="1340" y="1640">
+   <LINKPOINT x="1005" y="1740">
    </LINKPOINT>
-   <LINKPOINT x="1090" y="1540">
+   <LINKPOINT x="420" y="1740">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="0" dstpinname="Input 2" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="5" srcpinname="Count">
-   <LINKPOINT x="3785" y="1640">
+   <LINKPOINT x="3450" y="1740">
    </LINKPOINT>
-   <LINKPOINT x="1270" y="1540">
+   <LINKPOINT x="600" y="1740">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="0" dstpinname="Input 3" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="8" srcpinname="Count">
-   <LINKPOINT x="5465" y="1640">
+   <LINKPOINT x="5130" y="1740">
    </LINKPOINT>
-   <LINKPOINT x="1450" y="1540">
+   <LINKPOINT x="780" y="1740">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="0" dstpinname="Input 4" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="2" srcpinname="Count">
-   <LINKPOINT x="7610" y="1640">
+   <LINKPOINT x="7275" y="1740">
    </LINKPOINT>
-   <LINKPOINT x="1630" y="1540">
+   <LINKPOINT x="960" y="1740">
    </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="10" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="PolyLine" srcnodeid="0" srcpinname="Output">
+   <LINK dstnodeid="10" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
+   <LINKPOINT x="420" y="2610">
+   </LINKPOINT>
+   <LINKPOINT x="1005" y="2610">
+   </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="4" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="PolyLine" srcnodeid="0" srcpinname="Output">
+   <LINK dstnodeid="4" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
+   <LINKPOINT x="420" y="2610">
+   </LINKPOINT>
+   <LINKPOINT x="3450" y="2610">
+   </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="7" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="PolyLine" srcnodeid="0" srcpinname="Output">
+   <LINK dstnodeid="7" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
+   <LINKPOINT x="420" y="2610">
+   </LINKPOINT>
+   <LINKPOINT x="5130" y="2610">
+   </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="1" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="PolyLine" srcnodeid="0" srcpinname="Output">
+   <LINK dstnodeid="1" dstpinname="Input 1" hiddenwhenlocked="1" linkstyle="VHV" srcnodeid="0" srcpinname="Output">
+   <LINKPOINT x="420" y="2610">
+   </LINKPOINT>
+   <LINKPOINT x="7275" y="2610">
+   </LINKPOINT>
    </LINK>
    <PACK Name="image" Version="0.2.0">
    </PACK>

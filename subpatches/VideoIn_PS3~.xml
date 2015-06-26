@@ -574,18 +574,20 @@
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="576">
+   <LINK srcnodeid="565" srcpinname="Layer" dstnodeid="441" dstpinname="Layers">
+   <LINKPOINT x="300" y="10530">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="579">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="576" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="579" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="576" srcpinname="Texture Out" dstnodeid="487" dstpinname="Texture In">
-   </LINK>
-   <LINK srcnodeid="376" srcpinname="Layer" dstnodeid="441" dstpinname="Layers">
+   <LINK srcnodeid="579" srcpinname="Texture Out" dstnodeid="487" dstpinname="Texture In">
    </LINK>
    </PATCH>
