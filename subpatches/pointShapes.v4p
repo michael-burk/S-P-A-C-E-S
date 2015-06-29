@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p">
-   <BOUNDS type="Window" left="8445" top="4530" width="22605" height="15810">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="795" scrolly="0">
+   <BOUNDS type="Window" left="9255" top="2535" width="13170" height="9495">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -260,30 +260,6 @@
    <PIN pinname="Input X" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="17" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8865" top="2295" width="810" height="795">
-   </BOUNDS>
-   <BOUNDS type="Node" left="8865" top="2295" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="10,4,17">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Integer">
-   </PIN>
-   <PIN pinname="Rows" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Vector Size" slicecount="1" values="2">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="|0, 0|">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
-   </PIN>
-   </NODE>
    <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="18">
    <BOUNDS type="Node" left="5745" top="13695" width="2340" height="270">
    </BOUNDS>
@@ -327,9 +303,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="21" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5490" top="3765" width="795" height="720">
+   <BOUNDS type="Box" left="5670" top="1560" width="795" height="720">
    </BOUNDS>
-   <BOUNDS type="Node" left="5490" top="3765" width="0" height="0">
+   <BOUNDS type="Node" left="5670" top="1560" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="3" visible="1" values="1.7,1.29,1.17">
    </PIN>
@@ -906,10 +882,6 @@
    </LINK>
    <LINK srcnodeid="34" srcpinname="Output" dstnodeid="6" dstpinname="Index">
    </LINK>
-   <LINK srcnodeid="16" srcpinname="Output X" dstnodeid="14" dstpinname="X">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Output Y" dstnodeid="14" dstpinname="Y">
-   </LINK>
    <LINK srcnodeid="3" srcpinname="X" dstnodeid="5" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="11" srcpinname="Whole Part" dstnodeid="5" dstpinname="Spread Count">
@@ -931,12 +903,6 @@
    <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Width">
    </LINK>
    <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Height">
-   </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Spread Count" linkstyle="Bezier">
-   <LINKPOINT x="8865" y="3863">
-   </LINKPOINT>
-   <LINKPOINT x="6225" y="3863">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="8" srcpinname="XY" dstnodeid="18" dstpinname="Spread">
    </LINK>
@@ -1006,12 +972,6 @@
    <LINKPOINT x="7305" y="8963">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="19" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="8865" y="5258">
-   </LINKPOINT>
-   <LINKPOINT x="6600" y="5258">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="28" srcpinname="Output" dstnodeid="39" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Index" linkstyle="Bezier">
@@ -1042,12 +1002,6 @@
    <LINKPOINT x="8790" y="9255">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="8880" y="6130">
-   </LINKPOINT>
-   <LINKPOINT x="8055" y="5630">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="23" srcpinname="Output" dstnodeid="22" dstpinname="Index">
    </LINK>
    <LINK srcnodeid="26" srcpinname="Output" dstnodeid="27" dstpinname="Input 1">
@@ -1069,12 +1023,6 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Output" dstnodeid="30" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="41" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="8910" y="3573">
-   </LINKPOINT>
-   <LINKPOINT x="12120" y="3538">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="41" srcpinname="Count" dstnodeid="42" dstpinname="Input 1">
    </LINK>
@@ -1108,12 +1056,6 @@
    </LINK>
    <LINK srcnodeid="62" srcpinname="Output" dstnodeid="57" dstpinname=".. To [">
    </LINK>
-   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="8910" y="13320">
-   </LINKPOINT>
-   <LINKPOINT x="19080" y="13320">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="53" srcpinname="Output" dstnodeid="61" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="61" srcpinname="Count" dstnodeid="62" dstpinname="Input 1">
@@ -1131,5 +1073,81 @@
    <LINK srcnodeid="65" srcpinname="Y Output Value" dstnodeid="64" dstpinname="Input Value">
    </LINK>
    <LINK srcnodeid="68" srcpinname="Output" dstnodeid="65" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="71">
+   <BOUNDS type="Node" left="9780" top="1755" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1" slicecount="2" values="6,6">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="40">
+   </PIN>
+   </NODE>
+   <NODE systemname="RandomSpread (Spreads)" nodename="RandomSpread (Spreads)" componentmode="Hidden" id="72">
+   <BOUNDS type="Node" left="11115" top="1665" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Spread Count" visible="1" slicecount="2" values="6,6">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Random Seed" slicecount="1" values="39" visible="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1.39">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="71" srcpinname="Output" dstnodeid="14" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="72" srcpinname="Output" dstnodeid="14" dstpinname="Y">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="11190" top="105" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11190" top="105" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="-0.16,0.3,-0.05">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0, 0|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="73" srcpinname="Y Output Value" dstnodeid="72" dstpinname="Input">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="75">
+   <BOUNDS type="Node" left="12180" top="2850" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="12180" top="2850" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="9">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="41" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="16" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="19" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="72" dstpinname="Spread Count">
+   </LINK>
+   <LINK srcnodeid="75" srcpinname="Y Output Value" dstnodeid="71" dstpinname="Spread Count">
    </LINK>
    </PATCH>
