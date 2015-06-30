@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="2760" scrolly="1905" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="2370" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="8760" top="0" width="10455" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -985,6 +985,8 @@
    </PIN>
    <BOUNDS type="Window" left="3630" top="0" width="15000" height="11115">
    </BOUNDS>
+   <PIN pinname="Evaluate" slicecount="1" visible="1" pintype="Input" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="451" srcpinname="Average Framerate" dstnodeid="422" dstpinname="Y Input Value">
    </LINK>
@@ -1037,5 +1039,23 @@
    </LINKPOINT>
    <LINKPOINT x="3870" y="10688">
    </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="646" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9840" top="2325" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9840" top="2325" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="646" srcpinname="Y Output Value" dstnodeid="451" dstpinname="Evaluate">
    </LINK>
    </PATCH>

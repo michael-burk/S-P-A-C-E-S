@@ -62,7 +62,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	
 	else
 	{
-		if(dead[DTid.x] == 1) return;
+		//if(dead[DTid.x] == 1) return;
 		
 		int iterator = DTid.x;
 		uint addition = 1;
@@ -72,7 +72,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		float rest_length = restLength[iterator];
 		
-		if(divide[iterator] == 1 || divide[iterator+addition] == 1){
+		if(divide[iterator] == 1 || divide[iterator+addition] == 1 || dead[iterator] == 1 || dead[iterator+addition] == 1){
 			connect = false;
 		}
 		

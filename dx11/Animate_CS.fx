@@ -92,7 +92,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	float1 lookupB = mapRange(Output[DTid.x].pos.z,1,-1,0,1);
 	
 	
-	float radiusAddition = 0.03;
+	float radiusAddition = 0.0;
 	
 	// Bounds
 	if(bounds && !bounce){
