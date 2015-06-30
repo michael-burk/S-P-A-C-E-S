@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="2370" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="6120" scrolly="6390" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="8760" top="0" width="10455" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -31,9 +31,9 @@
    </PIN>
    </NODE>
    <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="291" stayontop="0">
-   <BOUNDS type="Node" left="8850" top="9045" width="100" height="100">
+   <BOUNDS type="Node" left="9300" top="8925" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8850" top="9045" width="6000" height="4500">
+   <BOUNDS type="Box" left="9300" top="8925" width="6000" height="4500">
    </BOUNDS>
    <BOUNDS type="Window" left="20370" top="0" width="4830" height="5085">
    </BOUNDS>
@@ -150,8 +150,6 @@
    <PIN pinname="Texture SizeXY" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="418" srcpinname="Buffers" dstnodeid="31" dstpinname="Input Node">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="422" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7425" top="4110" width="795" height="240">
    </BOUNDS>
@@ -1057,5 +1055,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="646" srcpinname="Y Output Value" dstnodeid="451" dstpinname="Evaluate">
+   </LINK>
+   <LINK srcnodeid="418" srcpinname="Buffers" dstnodeid="31" dstpinname="Input Node">
    </LINK>
    </PATCH>

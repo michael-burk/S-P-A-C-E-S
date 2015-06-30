@@ -26,11 +26,12 @@ struct particle
 	float4 color;
 };
 StructuredBuffer<particle> pData;
-
-StructuredBuffer<int> divide;
-StructuredBuffer<float2> closeLoop;
 StructuredBuffer<float3> resetData;
-StructuredBuffer<int> dead;
+StructuredBuffer<int> area;
+StructuredBuffer<float2> areaCorners;
+
+int areaCount;
+
 
 float radius = 0.05f;
 
@@ -96,110 +97,79 @@ float1 mapRange(float1 value, float from1,float to1,float from2, float to2){
 }
 
 
-[maxvertexcount(16)]
+[maxvertexcount(3)]
 void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 {
 	vs2ps output;
 	output.iv2 = input[0].iv2;
 	
-	int satisfactionCount = 1;
-		
-	if(closeLoop[input[0].iv2].x == 1){
-		satisfactionCount = 2;
-	}
+	bool justDoIt = false;
+	int currentArea;
 	
-	for(int m = 0; m < satisfactionCount; m++){
+		for(int m = 0; m < areaCount; m++){
+			if(input[0].iv2 >= areaCorners[m].x + 2
+			&& input[0].iv2 <= areaCorners[m].y - 0){
+				justDoIt = true;
+				currentArea = areaCount;
+			}
+		}
+	
+	if(!justDoIt){
+		return;
+	}
 		
-		
+//		if(area[input[0].iv2] != 1
+//		|| area[input[0].iv2 + 1] != 1
+//		|| area[input[0].iv2 - 1] != 1
+//		|| area[input[0].iv2 + 2] != 1r
+//		|| area[input[0].iv2 - 2] != 1) return;
+	
+	
+	
 		//
-		// Emit new triangles
+		// Emit three new triangles
 		//
 		
 		
 		float3 p0 = input[0].PosWVP.xyz;
 		float3 p1 = input[1].PosWVP.xyz;
-		
-		// close loop
-		if(m == 1){
-			p1 = pData[ closeLoop[input[0].iv2].y ].pos;
-		}
-		
-		
-		float3 tangent = p1 - p0;
-		
+		float3 pA = pData[areaCorners[areaCount/2].y ].pos;
+		float3 pB = pData[areaCorners[areaCount/2].x +2].pos;
+		//float3 pA = pData[2].pos;
+		//float3 pB = pData[74].pos;
+		float3 pAB = pB - pA;
+		float lengthAB = length(pAB);
 	
-		float3 normal = normalize(float3(tangent.z, -tangent.x, 0));
-		normal *= 0.1;
-	
-		tangent *= radius*0.6;
-		
-		for(int k=0; k<2; k++)
-		{
-			for(int i=0; i<2; i++)
-			{
-				
-				float3 position;
-				
+		float3 p2 = pA + normalize(pAB) * (lengthAB/2);
+		//float3 p2 = pData[200].pos;
 
-				if(i == 0){
-					position = -normal * radius;
-					position = mul( position, (float3x3)tVI ) + (p1 + tangent);
-				}
-				
-				
-				if(i == 1){
-					position = normal * radius;
-					position = mul( position, (float3x3)tVI ) + (p1 + tangent);
-				}
-				
-				
-				
-				float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
-				
-				
-				
-				output.PosWVP = mul( float4(position,1.0), tWVP );
-				output.TexCd = g_texcoords[i];
-				output.Vcol = input[0].Vcol;
-				
-				
-				SpriteStream.Append(output);
-			}
-			
-			for(int j=2; j<4; j++)
-			{
-				
-				float3 position;
-				
-				
-				if(j == 2){
-					position = -normal * radius;
-					position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz - tangent);
-				}
-				
-				
-				if(j == 3){
-					position = normal * radius;
-					position = mul( position, (float3x3)tVI ) + (input[0].PosWVP.xyz -+ tangent);
-				}
-				
-				
-			
-				
-				float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
-				
+		
+		
+		float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
+
+		output.PosWVP = mul( float4(p0,1.0), tWVP );		
+		output.TexCd = g_texcoords[0];
+		output.Vcol = input[0].Vcol;
+		
+		SpriteStream.Append(output);
 	
-				output.PosWVP = mul( float4(position,1.0), tWVP );		
-				output.TexCd = g_texcoords[j];
-				output.Vcol = input[0].Vcol;
-				
-				
-				SpriteStream.Append(output);
-			}
-		}
+		output.PosWVP = mul( float4(p1,1.0), tWVP );		
+		output.TexCd = g_texcoords[1];
+		output.Vcol = input[1].Vcol;
+		
+		SpriteStream.Append(output);
+	
+		output.PosWVP = mul( float4(p2,1.0), tWVP );		
+		output.TexCd = g_texcoords[1];
+		output.Vcol = input[1].Vcol;
+		
+		
+		SpriteStream.Append(output);
+			
+		
 		
 		SpriteStream.RestartStrip();
-	}
+	
 	
 }
 
@@ -208,11 +178,9 @@ float4 PS_Tex(vs2ps In): SV_Target
 {	
 	float4 col;
 	
-	if(divide[In.iv2] == 1 || divide[In.iv2 + 1] == 1 || dead[In.iv2] == 1 || dead[In.iv2 + 1] == 1){
-		 col = float4(0,0,0,0);
-	} else {
+	
 		 col =c;
-	}
+	
 	
 	
 	
@@ -230,15 +198,6 @@ technique10 Constant
 	}
 }
 
-technique10 VelocityColor
-{
-	pass P0
-	{
-		
-		SetVertexShader( CompileShader( vs_4_0, VS() ) );
-		SetGeometryShader( CompileShader( gs_4_0, GS() ) );
-	}
-}
 
 
 

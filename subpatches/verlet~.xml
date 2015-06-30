@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="660" scrolly="5010">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="840" scrolly="3255">
    <BOUNDS type="Window" left="5220" top="1365" width="19545" height="11790">
    </BOUNDS>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
@@ -305,7 +305,7 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="DynamicBuffer (DX11.Buffer Int)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Int)" componentmode="Hidden" id="378">
-   <BOUNDS type="Node" left="9855" top="9120" width="100" height="100">
+   <BOUNDS type="Node" left="9885" top="9720" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
@@ -640,8 +640,6 @@
    </NODE>
    <LINK srcnodeid="379" srcpinname="Output" dstnodeid="437" dstpinname="Spread">
    </LINK>
-   <LINK srcnodeid="437" srcpinname="Output" dstnodeid="378" dstpinname="Data" linkstyle="PolyLine">
-   </LINK>
    <NODE nodename="R (Value)" id="438" systemname="R (Value)">
    <BOUNDS type="Node" left="10875" top="7950" width="0" height="0">
    </BOUNDS>
@@ -653,5 +651,43 @@
    <LINK srcnodeid="438" srcpinname="Input Value" dstnodeid="437" dstpinname="Index">
    </LINK>
    <LINK srcnodeid="434" srcpinname="Output" dstnodeid="433" dstpinname="Data">
+   </LINK>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="439">
+   <BOUNDS type="Node" left="9360" top="9090" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="437" srcpinname="Output" dstnodeid="439" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="439" srcpinname="Output" dstnodeid="378" dstpinname="Data">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="440" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="9345" top="7545" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9345" top="7545" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="440" srcpinname="Y Output Value" dstnodeid="439" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="379" srcpinname="Output" dstnodeid="439" dstpinname="Input 1">
    </LINK>
    </PATCH>
