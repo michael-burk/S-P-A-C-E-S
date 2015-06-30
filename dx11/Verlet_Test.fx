@@ -19,8 +19,10 @@ StructuredBuffer<float2> connectorPos;
 
 StructuredBuffer<int> pinDown;
 StructuredBuffer<int> divide;
+StructuredBuffer<int> dead;
 StructuredBuffer<float> restLength;
 StructuredBuffer<float2> closeLoop;
+
 
 
 struct particle
@@ -60,6 +62,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	
 	else
 	{
+		if(dead[DTid.x] == 1) return;
 		
 		int iterator = DTid.x;
 		uint addition = 1;

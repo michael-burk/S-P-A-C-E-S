@@ -30,6 +30,7 @@ StructuredBuffer<particle> pData;
 StructuredBuffer<int> divide;
 StructuredBuffer<float2> closeLoop;
 StructuredBuffer<float3> resetData;
+StructuredBuffer<int> dead;
 
 float radius = 0.05f;
 
@@ -208,7 +209,7 @@ float4 PS_Tex(vs2ps In): SV_Target
 {	
 	float4 col;
 	
-	if(divide[In.iv2] == 1 || divide[In.iv2 + 1] == 1){
+	if(divide[In.iv2] == 1 || divide[In.iv2 + 1] == 1 || dead[In.iv2] == 1 || dead[In.iv2 +1] == 1){
 		 col = float4(0,0,0,0);
 	} else {
 		 col =c;

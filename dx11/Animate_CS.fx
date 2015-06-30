@@ -12,8 +12,6 @@ float returnFactor;
 float2 contactTimeFactor;
 float bounceFactor;
 bool highlightTexture;
-bool storm;
-bool spray;
 
 
 Texture2D tex1 <string uiname="Tracking";>;
@@ -95,10 +93,6 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	
 	
 	float radiusAddition = 0.03;
-	
-	if(storm){
-		radiusAddition = 0;
-	}
 	
 	// Bounds
 	if(bounds && !bounce){
@@ -223,10 +217,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 			//		Velocity Damping:
 				//		v *= resetData[DTid.x].w * 1;
 		}
-		else if(spray){
-			//		Velocity Damping:
-				//		v *= mapRange(resetData[DTid.x].w,0,1,0.9,1) * 1;
-		} 
+		
 		
 		
 
@@ -404,12 +395,10 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 			else
 			{
 				// Increment timer
-				//						if(attractorSolo){
-					//							Output[DTid.x].timer = 1.1;
-				//						} else {
-					Output[DTid.x].timer += (contactTimeFactor.x - mapRange(Output[DTid.x].radius,0,1,0,contactTimeFactor.x*2));
-					
-					//						}
+		
+					//Output[DTid.x].timer += (contactTimeFactor.x - mapRange(Output[DTid.x].radius,0,1,0,contactTimeFactor.x*2));
+					Output[DTid.x].timer += contactTimeFactor.x*0.01;
+			
 				
 			}
 			
@@ -417,7 +406,8 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		} else {
 			// Decrement timer
 			if(Output[DTid.x].timer > 0){
-				Output[DTid.x].timer -= (contactTimeFactor.y - mapRange(Output[DTid.x].radius,0,1,0,contactTimeFactor.y*2));
+				//Output[DTid.x].timer -= (contactTimeFactor.y - mapRange(Output[DTid.x].radius,0,1,0,contactTimeFactor.y*2));
+				Output[DTid.x].timer -= contactTimeFactor.y*0.01;
 			}
 			
 			
@@ -429,10 +419,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		// Special Attraction for biggest blob
 		
 		
-		if(DTid.x == 0 && collision){
-			//			v += float3(0,0,0) - Output[DTid.x].pos * 0.01;
-			v = 0;
-		}
+
 		
 		// Friction
 		
