@@ -107,7 +107,7 @@ void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 	int currentArea;
 	
 		for(int m = 0; m < areaCount; m++){
-			if(input[0].iv2 >= areaCorners[m].x + 1
+			if(input[0].iv2 >= areaCorners[m].x + 2
 			&& input[0].iv2 <= areaCorners[m].y - 0){
 				justDoIt = true;
 				currentArea = areaCount;
@@ -134,7 +134,7 @@ void GS(line vs2ps input[2], inout TriangleStream<vs2ps> SpriteStream)
 		float3 p0 = input[0].PosWVP.xyz;
 		float3 p1 = input[1].PosWVP.xyz;
 		float3 pA = pData[areaCorners[areaCount/2].y ].pos;
-		float3 pB = pData[areaCorners[areaCount/2].x +1].pos;
+		float3 pB = pData[areaCorners[areaCount/2].x +2].pos;
 		//float3 pA = pData[2].pos;
 		//float3 pB = pData[74].pos;
 		float3 pAB = pB - pA;

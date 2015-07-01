@@ -1,0 +1,116 @@
+float pCount;
+
+
+
+struct VS_IN
+{
+	float3 pos : POSITION;
+	float3 normal : NORMAL;
+	uint iv : SV_VertexID;
+};
+
+struct VS_OUT
+{
+	float3 pos : POSITION;
+//	float3 direction : DIRECTION;
+//	float tim : TIMER;
+	//	float3 normal : NORMAL;
+	uint iv2 : PrimitiveID;
+};
+
+
+struct particle
+{
+	float3 oldPos;
+	float3 pos;
+	float3 vel;
+	float radius;
+	bool collision;
+	bool texCollision;
+	float timer;
+	float4 color;
+	
+};
+Texture2D texture2d;
+StructuredBuffer<particle> pData;
+
+
+
+SamplerState g_samLinear : IMMUTABLE
+{
+	Filter = MIN_MAG_MIP_LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+};
+
+float1 mapRange(float1 value, float from1,float to1,float from2, float to2){
+	
+	return  (value - from1) / (to1 - from1) * (to2 - from2) + from2;
+}
+
+
+VS_OUT VS(VS_IN input)
+{
+	VS_OUT o;
+	o.pos = 0;
+	o.iv2 = input.iv;
+//	o.direction = 0;
+//	o.tim = 0;
+	return o;
+}
+
+
+[maxvertexcount(1)]
+void GS(point VS_OUT input[1],inout PointStream<VS_OUT> OutputStream)
+{
+	VS_OUT output;
+	output.iv2 = input[0].iv2;
+	
+	
+	
+	
+	
+	uint divisor = pCount / 50;
+	divisor = floor(divisor);	
+			
+	
+	if (input[0].iv2 % divisor == 1)
+	{
+//		float3 direction = pData[input[0].iv2].pos - pData[input[0].iv2].oldPos;
+		output.pos = pData[input[0].iv2+8].pos;
+//		output.direction = direction;
+		OutputStream.Append(output);
+		
+	}
+	
+	
+	
+	
+
+	
+	
+};
+
+DepthStencilState DisableDepth{
+	DepthEnable = FALSE;
+	DepthWriteMask = ZERO;
+};
+
+
+
+GeometryShader StreamOutGS = ConstructGSWithSO( CompileShader( gs_5_0, GS() ), "POSITION.xyz;" );
+
+
+technique11 PassMesh
+{
+	pass PP2
+	{
+		
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetGeometryShader( StreamOutGS );
+		
+		//		SetPixelShader(NULL);
+		//		SetDepthStencilState( DisableDepth, 0);
+		
+	}
+}

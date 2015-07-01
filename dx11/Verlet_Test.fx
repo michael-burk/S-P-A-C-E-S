@@ -64,7 +64,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	{
 		//if(dead[DTid.x] == 1) return;
 		
-		int iterator = DTid.x -1;
+		int iterator = DTid.x;
 		uint addition = 1;
 		uint division = pCount / connectorCount;
 		
@@ -77,7 +77,14 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		|| dead[iterator] == 1
 		|| dead[iterator+addition] == 1){
 			connect = false;
+			
+			return;
 		}
+		
+//		if(divide[iterator] == 1
+//		|| dead[iterator] == 1){
+//			connect = false;
+//		}
 		
 		
 		// Spring mass system and verlet integration code from
@@ -154,7 +161,8 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 			
 		}
 		
-		
+			
+				
 		if(pinDown[iterator - 1] == 1
 		|| pinDown[iterator + 1] == 1
 		|| pinDown[iterator] == 1){

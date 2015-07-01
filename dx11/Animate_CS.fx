@@ -45,6 +45,8 @@ StructuredBuffer<float2> attrData;
 
 //RandomDirectionBuffer
 StructuredBuffer<float3> rndDir;
+
+StructuredBuffer<int> dead;
 int brwIndexShift;
 float brwnStrenght;
 
@@ -85,6 +87,10 @@ float3 mapRange3(float3 value, float from1,float to1,float from2, float to2){
 [numthreads(128, 1, 1)]
 void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 {
+	
+	
+	if(dead[DTid.x] == 1) return;
+	
 	
 	// Mapping Range
 	

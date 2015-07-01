@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="2175" scrolly="3660">
-   <BOUNDS type="Window" left="7545" top="315" width="19545" height="11790">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="0" scrolly="5520">
+   <BOUNDS type="Window" left="9120" top="3000" width="15360" height="11790">
    </BOUNDS>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
    <BOUNDS type="Node" left="4545" top="10620" width="100" height="100">
@@ -504,8 +504,6 @@
    <PIN pinname="Input Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="337" srcpinname="Input Value" dstnodeid="399" dstpinname="Geometry">
-   </LINK>
    <LINK srcnodeid="383" srcpinname="Output" dstnodeid="382" dstpinname="Data">
    </LINK>
    <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="428">
@@ -607,7 +605,7 @@
    </BOUNDS>
    <PIN pinname="Buffer" visible="1">
    </PIN>
-   <PIN pinname="Data" visible="1" slicecount="1" values="0">
+   <PIN pinname="Data" visible="1" slicecount="624" values="0">
    </PIN>
    <PIN pinname="Apply" slicecount="1" visible="1" values="1">
    </PIN>
@@ -650,8 +648,6 @@
    </NODE>
    <LINK srcnodeid="438" srcpinname="Input Value" dstnodeid="437" dstpinname="Index">
    </LINK>
-   <LINK srcnodeid="434" srcpinname="Output" dstnodeid="433" dstpinname="Data">
-   </LINK>
    <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="439">
    <BOUNDS type="Node" left="9360" top="9090" width="100" height="100">
    </BOUNDS>
@@ -673,7 +669,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9345" top="7545" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -683,11 +679,15 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="440" srcpinname="Y Output Value" dstnodeid="439" dstpinname="Switch">
    </LINK>
    <LINK srcnodeid="379" srcpinname="Output" dstnodeid="439" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="434" srcpinname="Output" dstnodeid="433" dstpinname="Data">
+   </LINK>
+   <LINK srcnodeid="337" srcpinname="Input Value" dstnodeid="399" dstpinname="Geometry">
    </LINK>
    </PATCH>
