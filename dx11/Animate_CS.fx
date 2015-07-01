@@ -82,7 +82,7 @@ float3 mapRange3(float3 value, float from1,float to1,float from2, float to2){
 //COMPUTE SHADER ===============================================================
 //==============================================================================
 
-[numthreads(64, 1, 1)]
+[numthreads(128, 1, 1)]
 void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 {
 	

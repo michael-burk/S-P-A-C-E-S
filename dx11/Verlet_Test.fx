@@ -64,7 +64,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 	{
 		//if(dead[DTid.x] == 1) return;
 		
-		int iterator = DTid.x;
+		int iterator = DTid.x -1;
 		uint addition = 1;
 		uint division = pCount / connectorCount;
 		
@@ -72,7 +72,10 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		float rest_length = restLength[iterator];
 		
-		if(divide[iterator] == 1 || divide[iterator+addition] == 1 || dead[iterator] == 1 || dead[iterator+addition] == 1){
+		if(divide[iterator] == 1
+		|| divide[iterator+addition] == 1
+		|| dead[iterator] == 1
+		|| dead[iterator+addition] == 1){
 			connect = false;
 		}
 		
@@ -152,9 +155,13 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		}
 		
 		
-		if(pinDown[iterator] == 1){
+		if(pinDown[iterator - 1] == 1
+		|| pinDown[iterator + 1] == 1
+		|| pinDown[iterator] == 1){
 			
 			Output[iterator].pos = resetData[iterator];
+			Output[iterator].oldPos = resetData[iterator];
+			Output[iterator].vel = 0;
 			
 		}
 		

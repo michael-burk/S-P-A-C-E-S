@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="16514043" locked="0" scrollx="17280" scrolly="27780">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="16514043" locked="0" scrollx="0" scrolly="20475">
    <BOUNDS height="15150" left="9825" top="0" type="Window" width="15375">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
@@ -17,7 +17,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4035" top="9600" width="2325" height="375">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="284">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="533">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -229,7 +229,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9240" top="16995" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-0.08">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="-0.06">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1728,12 +1728,12 @@
    <PIN pinname="Input Value" visible="1">
    </PIN>
    </NODE>
-   <NODE id="3146" componentmode="Hidden" stayontop="0" systemname="verlet" filename="subpatches\verlet.v4p" nodename="subpatches\verlet.v4p">
+   <NODE id="3146" componentmode="Hidden" stayontop="1" systemname="verlet" filename="subpatches\verlet.v4p" nodename="subpatches\verlet.v4p">
    <PIN pinname="resetData" visible="1">
    </PIN>
    <PIN pinname="Divide" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="5220" top="1365" width="19545" height="11790">
+   <BOUNDS type="Window" left="7545" top="315" width="19545" height="11790">
    </BOUNDS>
    <BOUNDS type="Node" left="5415" top="25335" width="1830" height="270">
    </BOUNDS>
@@ -1920,8 +1920,6 @@
    <LINKPOINT x="5830" y="13613">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="3881" srcpinname="Input Value" dstnodeid="294" dstpinname="Y Input Value">
-   </LINK>
    <NODE systemname="ReadBack (DX11.Buffer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer)" componentmode="Hidden" id="3981">
    <BOUNDS type="Node" left="10545" top="24075" width="100" height="100">
    </BOUNDS>
@@ -2083,7 +2081,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8877" top="1875" width="22605" height="35550">
    </BOUNDS>
-   <BOUNDS type="Window" left="8700" top="495" width="15180" height="12855">
+   <BOUNDS type="Window" left="10200" top="1095" width="15180" height="12855">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="3972" srcpinname="Output 1" dstnodeid="370" dstpinname="Z">
@@ -2531,5 +2529,7 @@
    <LINK srcnodeid="4024" srcpinname="Input Value" dstnodeid="4027" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="4028" srcpinname="Output" dstnodeid="4014" dstpinname="areaCount">
+   </LINK>
+   <LINK srcnodeid="3881" srcpinname="Input Value" dstnodeid="294" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
