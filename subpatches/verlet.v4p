@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="0" scrolly="5520">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="1635" scrolly="6930">
    <BOUNDS type="Window" left="9120" top="3000" width="15360" height="11790">
    </BOUNDS>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
@@ -221,6 +221,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="impulse">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="356" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="8340" top="12480" width="795" height="240">
@@ -288,6 +290,8 @@
    <PIN pinname="Precision" slicecount="1" values="4">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="strength">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="379">
@@ -393,6 +397,14 @@
    </PIN>
    <PIN pinname="connectorCount" visible="1" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="strength" visible="1" slicecount="1" values="-0.01">
+   </PIN>
+   <PIN pinname="impulse" visible="1" slicecount="1" values="-0.03">
+   </PIN>
+   <PIN pinname="expand" visible="1">
+   </PIN>
+   <PIN pinname="restLengthFactor" visible="1" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="122" srcpinname="Y Output Value" dstnodeid="399" dstpinname="Enabled">
    </LINK>
@@ -408,11 +420,7 @@
    </LINK>
    <LINK srcnodeid="399" srcpinname="Layer" dstnodeid="339" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="344" srcpinname="Y Output Value" dstnodeid="399" dstpinname="impulse">
-   </LINK>
    <LINK srcnodeid="356" srcpinname="Output Node" dstnodeid="399" dstpinname="resetData">
-   </LINK>
-   <LINK srcnodeid="375" srcpinname="Y Output Value" dstnodeid="399" dstpinname="strength">
    </LINK>
    <LINK srcnodeid="378" srcpinname="Buffer" dstnodeid="399" dstpinname="pinDown">
    </LINK>
@@ -689,5 +697,73 @@
    <LINK srcnodeid="434" srcpinname="Output" dstnodeid="433" dstpinname="Data">
    </LINK>
    <LINK srcnodeid="337" srcpinname="Input Value" dstnodeid="399" dstpinname="Geometry">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="441">
+   <BOUNDS type="Node" left="6510" top="11505" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="442">
+   <BOUNDS type="Node" left="6720" top="10860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="443" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="6735" top="10170" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="6735" top="10170" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="443" srcpinname="Y Output Value" dstnodeid="442" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="442" srcpinname="Output" dstnodeid="441" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="344" srcpinname="Y Output Value" dstnodeid="399" dstpinname="impulse">
+   </LINK>
+   <LINK srcnodeid="375" srcpinname="Y Output Value" dstnodeid="399" dstpinname="strength">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="444" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="12840" top="11775" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="12840" top="11775" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="444" srcpinname="Y Output Value" dstnodeid="399" dstpinname="expand">
    </LINK>
    </PATCH>

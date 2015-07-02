@@ -4,6 +4,8 @@ float connectorCount; // Count of pinned particles
 
 float impulse;
 float strength;
+bool expand;
+float restLengthFactor;
 
 SamplerState mySampler : IMMUTABLE
 {
@@ -70,7 +72,8 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		bool connect = true;
 		
-		float rest_length = restLength[iterator];
+		//float rest_length = restLength[iterator];
+		float rest_length;
 		
 		if(divide[iterator] == 1
 		|| divide[iterator+addition] == 1
@@ -114,6 +117,8 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 				float currentDistance;
 				
 				rest_length = length( resetData[iterator+addition] - resetData[iterator]);
+				rest_length *= restLengthFactor;
+				
 				
 				// Multiple iterations for better precision
 				for(int k = 0; k < 20; k++){
@@ -131,11 +136,18 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 						correctionVector = mul(p1_to_p2, (1 - rest_length/currentDistance));
 						correctionVectorHalf = correctionVector * strength;
 						
-					if(connect){
+					if(connect && !expand){
 						Output[iterator].pos += correctionVectorHalf;
 						Output[iterator+addition].pos -= correctionVectorHalf;
+						
 					}
 						
+					if(expand){
+						Output[iterator].pos -= normalize(p1_to_p2)*.00001;
+						//Output[iterator+addition].pos += normalize(p1_to_p2)*.00001;
+						
+						
+					}
 						
 					}
 					
