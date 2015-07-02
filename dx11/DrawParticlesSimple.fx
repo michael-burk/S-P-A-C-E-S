@@ -9,24 +9,13 @@ float4x4 tVI : VIEWINVERSE;
 float4x4 tWVP : WORLDVIEWPROJECTION;
 
 Texture2D texture2d;
-Texture2D ploppelTex;
 
 float4 c <bool color=true;> = 1;
 float velColMult = 1;
 float alpha;
-bool drawRadius;
-bool drawCollision;
-bool blowUp;
 float4 highlightColor<bool color=true;>;
-bool ploppel;
+
 bool highlightTexture;
-bool colorShift;
-
-
-bool heading;
-float4x4 tEach <string uiname="Transform Each";  >;
-
-
 
 
 struct particle
@@ -133,50 +122,10 @@ void GS(point vs2ps input[1], inout TriangleStream<vs2ps> SpriteStream)
 	for(int i=0; i<4; i++)
 	{
 		float3 position;
-		float colorShiftRadius;
 		
-		if(colorShift){
-		
-			if(output.iv2 % 3 == 0){
-				colorShiftRadius = 1.2;
-			} 
-			else if(output.iv2 % 10 == 0){
-				colorShiftRadius = 1.8;
-			} else {
-				colorShiftRadius = 1;
-			}
-		}
-		
-		if(drawRadius){
-			if(ploppel){
-				if(output.iv2 == 0){
-					position = (g_positions[i]*1.5)*(pData[output.iv2].radius*1);
-				} else {
-					position = (g_positions[i])*(pData[output.iv2].radius*1);
-				}
-			} else {
-				position = (g_positions[i])*(pData[output.iv2].radius*1);
-			}
-			
-		} else {
-			if(drawCollision&&blowUp){
-				position = g_positions[i]*((pData[output.iv2].timer * 0.5) + 1) * colorShiftRadius;
-			} else {
-				position = g_positions[i] * colorShiftRadius;
-			}
-				
-		}
-		
-		if (!drawRadius)
-		{
-		position = mul( position, tEach) ;
-		}
-		
-		if (heading)
-		{
-			position = mul( position, rotMatrix) ;
-		}
-		
+
+	
+		position = (g_positions[i])*(pData[output.iv2].radius*1);
 		
 		position = mul( position, (float3x3)tVI ) + input[0].PosWVP.xyz;		
 		float3 norm = mul(float3(0,0,-1),(float3x3)tVI );
@@ -198,53 +147,18 @@ float4 PS_Tex(vs2ps In): SV_Target
 
 	float4 col;
 	float4 newHighlightColor = highlightColor;
-	float4 shiftColor = 1;
 	
-	if(highlightTexture)
-	{
-		newHighlightColor = pData[In.iv2].color;
-	}
-	
-	
-	if(ploppel){
-		if(In.iv2 == 0){
-			col = ploppelTex.Sample( g_samLinear, In.TexCd);
-		} else {
-			col = texture2d.Sample( g_samLinear, In.TexCd);
-		}
-	} else {
-		col = texture2d.Sample( g_samLinear, In.TexCd);
-	}
-	
-	if(colorShift){
-		if(In.iv2 % 2 == 0){
-			shiftColor = float4(2,2,2,1);		
-		}
-		else if(In.iv2 % 3 == 0) {
-			shiftColor = float4(1.5,1.5,1.5,1);	
-			
-		} 
-		else if(In.iv2 % 5 == 0) {
-			shiftColor = float4(0.2,0.2,0.2,1);	
-			
-		}
-		else {
-			shiftColor = float4(1,1,1,1);
-		}
-	}
-	
-	
-	if(drawCollision){
+
+	newHighlightColor = pData[In.iv2].color;
 		
-		col *= c * shiftColor * (1 - pData[In.iv2].timer) + newHighlightColor
-		*  pData[In.iv2].timer;	
-		
-	}else{
-		
-		col *= c;
-	}
+	col *= c;
 	
-	col = c;
+	col = texture2d.Sample( g_samLinear, In.TexCd);
+	
+	col += highlightColor;
+	
+	
+	
 	return col;
 }
 
