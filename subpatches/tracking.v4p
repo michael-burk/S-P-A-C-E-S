@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="0" scrolly="1380" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="4515" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="8760" top="0" width="10455" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -647,7 +647,7 @@
    </PIN>
    <PIN pinname="Enabled" pintype="Input" visible="1" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Enable Depth Buffer" pintype="Input" visible="1" slicecount="1" values="1">
+   <PIN pinname="Enable Depth Buffer" pintype="Input" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="View" pintype="Input" visible="1" slicecount="1" values="||">
    </PIN>
@@ -909,7 +909,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7980" top="5130" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -919,7 +919,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="639" srcpinname="Y Output Value" dstnodeid="638" dstpinname="Switch">
@@ -981,7 +981,7 @@
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="3630" top="0" width="15000" height="11115">
+   <BOUNDS type="Window" left="9915" top="2730" width="15000" height="11115">
    </BOUNDS>
    <PIN pinname="Evaluate" slicecount="1" visible="1" pintype="Input" values="1">
    </PIN>
@@ -1053,9 +1053,25 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="646" srcpinname="Y Output Value" dstnodeid="451" dstpinname="Evaluate">
    </LINK>
    <LINK srcnodeid="418" srcpinname="Buffers" dstnodeid="31" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="647">
+   <BOUNDS type="Node" left="8085" top="4650" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="646" srcpinname="Y Output Value" dstnodeid="647" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="647" srcpinname="Output" dstnodeid="639" dstpinname="Y Input Value" linkstyle="PolyLine">
    </LINK>
    </PATCH>

@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamOut.v4p" systemname="streamOut" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamOut.v4p" scrollx="0" scrolly="1650">
-   <BOUNDS type="Window" left="11295" top="600" width="14205" height="13170">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamOut.v4p" systemname="streamOut" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamOut.v4p" scrollx="2010" scrolly="255">
+   <BOUNDS type="Window" left="10080" top="495" width="14205" height="13170">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -105,6 +105,8 @@
    </PIN>
    <PIN pinname="pCount" visible="1">
    </PIN>
+   <PIN pinname="dead" visible="1">
+   </PIN>
    </NODE>
    <NODE systemname="ReadBack (DX11.Buffer Region)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer Region)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="1500" top="8685" width="100" height="100">
@@ -175,7 +177,7 @@
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
-   <PIN pinname="Set" visible="1">
+   <PIN pinname="Set" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -195,7 +197,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7380" top="1500" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="22">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -450,12 +452,6 @@
    </LINK>
    <LINK srcnodeid="4" srcpinname="Output 1XYZ" dstnodeid="9" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="6" srcpinname="Change" dstnodeid="9" dstpinname="Set" linkstyle="Bezier">
-   <LINKPOINT x="2280" y="9218">
-   </LINKPOINT>
-   <LINKPOINT x="1890" y="9218">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="9" srcpinname="Output" dstnodeid="29" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="28" srcpinname="First Occurrence" dstnodeid="29" dstpinname="Index">
@@ -469,9 +465,9 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1545" top="16925" width="750" height="240">
    </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="10" srcpinname="Position Out" dstnodeid="32" dstpinname="Y Input Value">
-   </LINK>
    <LINK srcnodeid="7" srcpinname="Geometry Out" dstnodeid="2" dstpinname="Geometry">
    </LINK>
    <LINK srcnodeid="3" srcpinname="Buffer Out" dstnodeid="2" dstpinname="stream" linkstyle="Bezier">
@@ -671,6 +667,8 @@
    </PIN>
    <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Enable" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE systemname="Mod (Value)" nodename="Mod (Value)" componentmode="Hidden" id="43">
    <BOUNDS type="Node" left="3165" top="8985" width="100" height="100">
@@ -683,7 +681,7 @@
    </PIN>
    </NODE>
    <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="44">
-   <BOUNDS type="Node" left="3195" top="9330" width="100" height="100">
+   <BOUNDS type="Node" left="3195" top="9510" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -699,7 +697,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3900" top="8850" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="3">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -720,8 +718,6 @@
    </NODE>
    <LINK srcnodeid="44" srcpinname="Output" dstnodeid="46" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="46" srcpinname="Output" dstnodeid="4" dstpinname="Enabled">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="47" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="4005" top="9525" width="480" height="480">
    </BOUNDS>
@@ -741,5 +737,109 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="46" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="51">
+   <BOUNDS type="Node" left="9660" top="5130" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Select" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="50">
+   <BOUNDS type="Node" left="9645" top="5700" width="1080" height="270">
+   </BOUNDS>
+   <PIN pinname="Spread" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Input" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="51" srcpinname="Output" dstnodeid="50" dstpinname="Spread">
+   </LINK>
+   <NODE systemname="DynamicBuffer (DX11.Buffer Int)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DynamicBuffer (DX11.Buffer Int)" componentmode="Hidden" id="49">
+   <BOUNDS type="Node" left="9630" top="6240" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Buffer" visible="1">
+   </PIN>
+   <PIN pinname="Data" visible="1">
+   </PIN>
+   <PIN pinname="Apply" slicecount="1" visible="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="R (Value)" id="48" systemname="R (Value)">
+   <BOUNDS type="Node" left="10665" top="4995" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="deadzone">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="48" srcpinname="Input Value" dstnodeid="50" dstpinname="Index">
+   </LINK>
+   <LINK srcnodeid="49" srcpinname="Buffer" dstnodeid="3" dstpinname="dead">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Input Value" dstnodeid="51" dstpinname="Select">
+   </LINK>
+   <NODE systemname="EQ (Value)" nodename="EQ (Value)" componentmode="Hidden" id="52">
+   <BOUNDS type="Node" left="2655" top="13740" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="-7">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Position Out" dstnodeid="52" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Select (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Select (Value)" componentmode="Hidden" id="55">
+   <BOUNDS type="Node" left="1890" top="14835" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Select" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Position Out" dstnodeid="55" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="52" srcpinname="Inverse Output" dstnodeid="55" dstpinname="Select">
+   </LINK>
+   <LINK srcnodeid="55" srcpinname="Output" dstnodeid="32" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Output" dstnodeid="4" dstpinname="Enabled">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="57" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1950" top="9270" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1950" top="9270" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="46" srcpinname="Output" dstnodeid="9" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="50" srcpinname="Output" dstnodeid="49" dstpinname="Data">
    </LINK>
    </PATCH>

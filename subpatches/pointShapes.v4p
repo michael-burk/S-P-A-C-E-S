@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="0" scrolly="1260" locked="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="780" scrolly="30" locked="0">
    <BOUNDS type="Window" left="9165" top="1650" width="15720" height="12855">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -11,7 +11,7 @@
    </PIN>
    <PIN pinname="Y" visible="1">
    </PIN>
-   <BOUNDS height="270" left="5145" top="22845" type="Node" width="4200">
+   <BOUNDS height="270" left="5145" top="23145" type="Node" width="4200">
    </BOUNDS>
    <PIN pinname="X" visible="1">
    </PIN>
@@ -43,13 +43,15 @@
    </BOUNDS>
    <BOUNDS height="3105" left="5145" top="24045" type="Box" width="3795">
    </BOUNDS>
-   <PIN pinname="Layers" visible="1">
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Actual Backbuffer Width" visible="1">
    </PIN>
    <PIN pinname="Actual Backbuffer Height" visible="1">
    </PIN>
    <PIN pinname="Viewport Matrix Transformation" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Color)" componentmode="InABox" id="2" systemname="IOBox (Color)">
@@ -205,9 +207,9 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="X" visible="1" slicecount="6" values="0.52,0.27,-0.23,-0.48,-0.23,0.27">
+   <PIN pinname="X" visible="1" slicecount="24" values="0.52,0.27,-0.23,-0.48,-0.23,0.27">
    </PIN>
-   <PIN pinname="Y" visible="1" slicecount="6" values="0,0.433012701892219,0.433012701892219,6.12303176911189E-017,-0.433012701892219,-0.433012701892219">
+   <PIN pinname="Y" visible="1" slicecount="24" values="0,0.433012701892219,0.433012701892219,6.12303176911189E-017,-0.433012701892219,-0.433012701892219">
    </PIN>
    <PIN pinname="XY" visible="1">
    </PIN>
@@ -702,8 +704,6 @@
    </NODE>
    <LINK srcnodeid="2" srcpinname="Color Output" dstnodeid="0" dstpinname="Pen Color">
    </LINK>
-   <LINK srcnodeid="0" srcpinname="Layer" dstnodeid="1" dstpinname="Layers">
-   </LINK>
    <LINK srcnodeid="13" srcpinname="Output 1" dstnodeid="1" dstpinname="Viewport Matrix Transformation" linkstyle="Bezier">
    <LINKPOINT x="5925" y="24735">
    </LINKPOINT>
@@ -975,7 +975,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="12180" top="2850" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="5">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="8">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
@@ -1371,7 +1371,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="19785" top="26925" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1381,7 +1381,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -1911,7 +1911,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12030" top="1830" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="3,3,4">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="3,4,3">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -2057,8 +2057,6 @@
    <LINK srcnodeid="68" srcpinname="Output" dstnodeid="64" dstpinname="Input Value">
    </LINK>
    <LINK srcnodeid="34" srcpinname="Output" dstnodeid="6" dstpinname="Index">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="3" dstpinname="XY">
    </LINK>
    <LINK srcnodeid="46" srcpinname="Output" dstnodeid="20" dstpinname="Y Input Value">
    </LINK>
@@ -2281,6 +2279,12 @@
    </BOUNDS>
    <PIN pinname="Input X" visible="1">
    </PIN>
+   <PIN pinname="Output X" visible="1">
+   </PIN>
+   <PIN pinname="Output Y" visible="1">
+   </PIN>
+   <PIN pinname="Input Y" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="90" srcpinname="Y Output Value" dstnodeid="243" dstpinname="Spread Count" linkstyle="Bezier">
    <LINKPOINT x="12185" y="4125">
@@ -2288,16 +2292,12 @@
    <LINKPOINT x="6295" y="3975">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="243" srcpinname="Output X" dstnodeid="14" dstpinname="X">
-   </LINK>
-   <LINK srcnodeid="243" srcpinname="Output Y" dstnodeid="14" dstpinname="Y">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="244" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5265" top="4230" width="795" height="240">
    </BOUNDS>
    <BOUNDS type="Node" left="5265" top="4230" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.04">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.02">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -2350,16 +2350,6 @@
    </LINK>
    <LINK srcnodeid="226" srcpinname="Output 1" dstnodeid="223" dstpinname="Input 2">
    </LINK>
-   <NODE systemname="FrameDelay (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="FrameDelay (Value)" componentmode="Hidden" id="254">
-   <BOUNDS type="Node" left="7155" top="17850" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output 1" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="254" dstpinname="Input 1">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="256" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="3765" top="18420" width="795" height="240">
    </BOUNDS>
@@ -2389,5 +2379,11 @@
    <LINK srcnodeid="256" srcpinname="Y Output Value" dstnodeid="257" dstpinname="Set">
    </LINK>
    <LINK srcnodeid="257" srcpinname="Output" dstnodeid="15" dstpinname="InputXY">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="3" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="243" srcpinname="Output X" dstnodeid="14" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="243" srcpinname="Output Y" dstnodeid="14" dstpinname="Y">
    </LINK>
    </PATCH>
