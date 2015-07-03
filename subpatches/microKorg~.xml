@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\microKorg.v4p" systemname="microKorg" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\microKorg.v4p" scrollx="8250" scrolly="4680">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\microKorg.v4p" systemname="microKorg" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\microKorg.v4p" scrollx="1590" scrolly="150">
    <BOUNDS type="Window" left="7080" top="630" width="25380" height="13140">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -207,7 +207,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="13860" top="6870" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="53">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="17">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -305,7 +305,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5580" top="10605" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -379,7 +379,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="OSC1Level">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.834586466165413">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.593984962406015">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -405,7 +405,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="OSC2Level">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.203007518796992">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.172932330827068">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -431,7 +431,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Noise">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.323308270676692">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.112781954887218">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -467,7 +467,7 @@
    </PIN>
    <PIN pinname="XYZW" visible="1">
    </PIN>
-   <PIN pinname="Input 1" visible="1" slicecount="1" values="1.84399052661548E-005">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0.09">
    </PIN>
    <PIN pinname="Input 2" visible="1">
    </PIN>
@@ -527,7 +527,7 @@
    </PIN>
    <PIN pinname="Rows" slicecount="1" values="4">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="38,33,52,19">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="38,34,52,15">
    </PIN>
    <PIN pinname="Vector Size" slicecount="1" values="4">
    </PIN>
@@ -992,12 +992,6 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Input 1" linkstyle="Bezier">
-   <LINKPOINT x="3960" y="5213">
-   </LINKPOINT>
-   <LINKPOINT x="3960" y="5213">
-   </LINKPOINT>
-   </LINK>
    <NODE id="101" nodename="S+H (Animation)" systemname="S+H (Animation)">
    <BOUNDS height="270" left="420" top="15465" type="Node" width="630">
    </BOUNDS>
@@ -1309,7 +1303,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Time" slicecount="1" values="0.1">
+   <PIN pinname="Time" slicecount="1" values="0.5">
    </PIN>
    </NODE>
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="129" dstpinname="Input">
@@ -1398,10 +1392,90 @@
    <PIN pinname="Size" slicecount="1" values="14">
    </PIN>
    </NODE>
-   <LINK srcnodeid="130" srcpinname="Output" dstnodeid="27" dstpinname="Y Input Value">
+   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Pitch Bend">
+   </LINK>
+   <NODE systemname="Delay (Animation)" filename="" nodename="Delay (Animation)" componentmode="Hidden" id="138">
+   <BOUNDS type="Node" left="11805" top="4890" width="900" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output 1" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="0.1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="9" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="128" srcpinname="Output" dstnodeid="29" dstpinname="Do Send">
    </LINK>
-   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Pitch Bend">
+   <LINK srcnodeid="130" srcpinname="Output" dstnodeid="27" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="MidiShortOut (Devices)" nodename="MidiShortOut (Devices)" componentmode="Hidden" id="142">
+   <BOUNDS type="Node" left="16350" top="10035" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Midi Output Port" visible="1">
+   </PIN>
+   <PIN pinname="Data2" slicecount="1" visible="1" values="2">
+   </PIN>
+   <PIN pinname="Data1" slicecount="1" values="10">
+   </PIN>
+   <PIN pinname="Message" slicecount="1" values="176">
+   </PIN>
+   <PIN pinname="Do Send" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="17070" top="8700" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17070" top="8700" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Pan">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="140" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Box" left="17415" top="9045" width="1590" height="270">
+   </BOUNDS>
+   <BOUNDS type="Node" left="17415" top="9045" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|USB Midi Cable|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="140" srcpinname="Output Enum" dstnodeid="142" dstpinname="Midi Output Port">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="139">
+   <BOUNDS type="Node" left="16365" top="9345" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="16365" top="9345" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="139" srcpinname="Y Output Value" dstnodeid="142" dstpinname="Do Send">
+   </LINK>
+   <LINK srcnodeid="141" srcpinname="Y Output Value" dstnodeid="142" dstpinname="Data2">
    </LINK>
    </PATCH>

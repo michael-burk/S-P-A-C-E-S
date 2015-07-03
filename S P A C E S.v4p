@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="16514043" locked="0" scrollx="1125" scrolly="6300">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="16514043" locked="0" scrollx="330" scrolly="10620">
    <BOUNDS height="15150" left="9060" top="0" type="Window" width="16140">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
@@ -63,7 +63,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7275" top="17505" width="795" height="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,-0.01">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -844,8 +844,6 @@
    </PACK>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
-   <LINK srcnodeid="303" srcpinname="Output" dstnodeid="1943" dstpinname="Thread X">
-   </LINK>
    <LINK srcnodeid="294" srcpinname="Y Output Value" dstnodeid="3039" dstpinname="Select" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="4025" y="14378">
    </LINKPOINT>
@@ -2344,7 +2342,11 @@
    </LINK>
    <LINK srcnodeid="3172" srcpinname="Buffers" dstnodeid="4221" dstpinname="pData">
    </LINK>
-   <LINK srcnodeid="3315" srcpinname="Output" dstnodeid="4221" dstpinname="Reset Counter">
+   <LINK srcnodeid="3315" srcpinname="Output" dstnodeid="4221" dstpinname="Reset Counter" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="7380" y="18293">
+   </LINKPOINT>
+   <LINKPOINT x="14325" y="18293">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="4223">
    <BOUNDS type="Node" left="16680" top="29505" width="100" height="100">
@@ -2807,7 +2809,7 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="20">
+   <PIN pinname="Input 2" slicecount="1" visible="1" values="50">
    </PIN>
    <PIN pinname="Input 1" visible="1" slicecount="14" values="1">
    </PIN>
@@ -2831,7 +2833,7 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Destination Maximum" slicecount="1" values="0.57">
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.5">
    </PIN>
    <PIN pinname="Mapping" slicecount="1" values="Clamp">
    </PIN>
@@ -2860,24 +2862,6 @@
    </LINK>
    <LINK srcnodeid="4221" srcpinname="Position Out" dstnodeid="4065" dstpinname="XYZ">
    </LINK>
-   <NODE systemname="microKorg" filename="subpatches\microKorg.v4p" nodename="subpatches\microKorg.v4p" componentmode="Hidden" id="4283">
-   <BOUNDS type="Node" left="11370" top="39615" width="1950" height="270">
-   </BOUNDS>
-   <BOUNDS type="Window" left="7080" top="630" width="25380" height="13140">
-   </BOUNDS>
-   <PIN pinname="CutOff" visible="1">
-   </PIN>
-   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.323308270676692">
-   </PIN>
-   <PIN pinname="Do Send - Enabled" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Pitch Bend" visible="1" slicecount="1" values="0.5">
-   </PIN>
-   <PIN pinname="Evaluate" visible="1" pintype="Input" slicecount="1" values="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="4306" srcpinname="Output" dstnodeid="4283" dstpinname="CutOff">
-   </LINK>
    <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="4321">
    <BOUNDS type="Node" left="13260" top="37815" width="100" height="100">
    </BOUNDS>
@@ -2895,16 +2879,14 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Source Minimum" slicecount="1" values="-10" visible="1">
+   <PIN pinname="Source Minimum" slicecount="1" visible="1" values="-10">
    </PIN>
-   <PIN pinname="Source Maximum" slicecount="1" values="10" visible="1">
+   <PIN pinname="Source Maximum" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Mapping" slicecount="1" values="Clamp">
    </PIN>
    </NODE>
    <LINK srcnodeid="4321" srcpinname="Output" dstnodeid="4322" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="4322" srcpinname="Output" dstnodeid="4283" dstpinname="Pitch Bend">
    </LINK>
    <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="4325">
    <BOUNDS type="Node" left="14610" top="37080" width="100" height="100">
@@ -2985,9 +2967,9 @@
    <LINK srcnodeid="4330" srcpinname="Length" dstnodeid="4224" dstpinname="Input">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4331" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="14700" top="39720" width="480" height="480">
+   <BOUNDS type="Box" left="14760" top="39225" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="14700" top="39720" width="0" height="0">
+   <BOUNDS type="Node" left="14760" top="39225" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -3002,6 +2984,230 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
+   <NODE systemname="GE (Value)" nodename="GE (Value)" componentmode="Hidden" id="4335">
+   <BOUNDS type="Node" left="15885" top="36165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0.001">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4227" srcpinname="Output" dstnodeid="4335" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="4338">
+   <BOUNDS type="Node" left="15945" top="36990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4335" srcpinname="Output" dstnodeid="4338" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="4340">
+   <BOUNDS type="Node" left="16155" top="38025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4338" srcpinname="Output" dstnodeid="4340" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4341" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="16155" top="39180" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16155" top="39180" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="1.88499145165891E-033">
+   </PIN>
+   </NODE>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="4342">
+   <BOUNDS type="Node" left="16860" top="40065" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Source Minimum" slicecount="1" values="50">
+   </PIN>
+   <PIN pinname="Source Maximum" slicecount="1" visible="1" values="-50">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Count (Value)" nodename="Count (Value)" componentmode="Hidden" id="4343">
+   <BOUNDS type="Node" left="17310" top="36780" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4227" srcpinname="Output" dstnodeid="4343" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="4344">
+   <BOUNDS type="Node" left="17310" top="39210" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4343" srcpinname="Count" dstnodeid="4344" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="4344" srcpinname="Output" dstnodeid="4342" dstpinname="Source Maximum">
+   </LINK>
+   <LINK srcnodeid="4343" srcpinname="Count" dstnodeid="4340" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="4345">
+   <BOUNDS type="Node" left="18255" top="38505" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4340" srcpinname="Output" dstnodeid="4345" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4346" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="16875" top="40800" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16875" top="40800" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4342" srcpinname="Output" dstnodeid="4346" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="4347">
+   <BOUNDS type="Node" left="16140" top="38730" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1" slicecount="1" values="34">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="Velocity Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4340" srcpinname="Output" dstnodeid="4347" dstpinname="Go To Position">
+   </LINK>
+   <LINK srcnodeid="4347" srcpinname="Position Out" dstnodeid="4341" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4349" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="16365" top="37440" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="16365" top="37440" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4338" srcpinname="Output" dstnodeid="4349" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="4350">
+   <BOUNDS type="Node" left="11325" top="35685" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4065" srcpinname="X" dstnodeid="4350" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="4355">
+   <BOUNDS type="Node" left="12075" top="36180" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4065" srcpinname="Z" dstnodeid="4355" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="4354">
+   <BOUNDS type="Node" left="12075" top="37305" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Source Minimum" visible="1">
+   </PIN>
+   <PIN pinname="Source Maximum" visible="1">
+   </PIN>
+   <PIN pinname="Mapping" slicecount="1" values="Clamp">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="127">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4325" srcpinname="Count" dstnodeid="4354" dstpinname="Source Maximum">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="4353">
+   <BOUNDS type="Node" left="12240" top="36585" width="330" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4325" srcpinname="Count" dstnodeid="4353" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="4353" srcpinname="Output" dstnodeid="4354" dstpinname="Source Minimum">
+   </LINK>
+   <LINK srcnodeid="4350" srcpinname="Output" dstnodeid="4354" dstpinname="Input">
+   </LINK>
+   <NODE systemname="microKorg" filename="subpatches\microKorg.v4p" nodename="subpatches\microKorg.v4p" componentmode="Hidden" id="4283">
+   <BOUNDS type="Node" left="11370" top="39615" width="1950" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="7080" top="630" width="25380" height="13140">
+   </BOUNDS>
+   <PIN pinname="CutOff" visible="1">
+   </PIN>
+   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.323308270676692">
+   </PIN>
+   <PIN pinname="Do Send - Enabled" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pitch Bend" visible="1">
+   </PIN>
+   <PIN pinname="Evaluate" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Pan" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4306" srcpinname="Output" dstnodeid="4283" dstpinname="CutOff">
+   </LINK>
+   <LINK srcnodeid="4322" srcpinname="Output" dstnodeid="4283" dstpinname="Pitch Bend">
+   </LINK>
    <LINK srcnodeid="4331" srcpinname="Y Output Value" dstnodeid="4283" dstpinname="Evaluate">
+   </LINK>
+   <LINK srcnodeid="4354" srcpinname="Output" dstnodeid="4283" dstpinname="Pan">
+   </LINK>
+   <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="4356">
+   <BOUNDS type="Node" left="5835" top="17490" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Whole Part" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="303" srcpinname="Output" dstnodeid="4356" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="4356" srcpinname="Whole Part" dstnodeid="1943" dstpinname="Thread X">
    </LINK>
    </PATCH>
