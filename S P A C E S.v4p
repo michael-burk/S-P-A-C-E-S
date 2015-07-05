@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="9975" scrolly="20595">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="8385" scrolly="12615">
    <BOUNDS height="13935" left="8580" top="1215" type="Window" width="16620">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
@@ -1689,7 +1689,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="8877" top="1875" width="22605" height="35550">
    </BOUNDS>
-   <BOUNDS type="Window" left="1275" top="1935" width="15720" height="12855">
+   <BOUNDS type="Window" left="7230" top="165" width="15705" height="12855">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="3972" srcpinname="Output 1" dstnodeid="370" dstpinname="Z">
@@ -2741,7 +2741,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="10848" top="20400" width="4735" height="3570">
    </BOUNDS>
-   <BOUNDS type="Window" left="630" top="300" width="4725" height="3570">
+   <BOUNDS type="Window" left="2055" top="1260" width="3675" height="3225">
    </BOUNDS>
    </NODE>
    <NODE systemname="SceneProgres" filename="SceneProgres.v4p" nodename="subpatches\SceneProgres.v4p" componentmode="Hidden" id="4464" stayontop="1">
@@ -2752,12 +2752,12 @@
    <BOUNDS type="Window" left="2955" top="2025" width="17145" height="12405">
    </BOUNDS>
    </NODE>
-   <NODE systemname="blink" filename="subpatches\blink.v4p" nodename="subpatches\blink.v4p" componentmode="Hidden" id="4463">
+   <NODE systemname="blink" filename="subpatches\blink.v4p" nodename="subpatches\blink.v4p" componentmode="Hidden" id="4463" stayontop="1">
    <BOUNDS type="Node" left="19898" top="27660" width="5100" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="14718" top="23575" width="10360" height="8170">
    </BOUNDS>
-   <BOUNDS type="Window" left="13005" top="2190" width="12840" height="10230">
+   <BOUNDS type="Window" left="9750" top="5100" width="12840" height="11835">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="4463" srcpinname="Y Output Value" dstnodeid="4425" dstpinname="Input">

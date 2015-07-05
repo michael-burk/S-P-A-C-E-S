@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="9975" scrolly="20595">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="12300" scrolly="20910">
    <BOUNDS height="13935" left="8580" top="1215" type="Window" width="16620">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
@@ -1684,12 +1684,12 @@
    </LINK>
    <LINK srcnodeid="3974" srcpinname="Y Output Value" dstnodeid="3172" dstpinname="Element Count">
    </LINK>
-   <NODE systemname="pointShapes" filename="subpatches\pointShapes.v4p" nodename="subpatches\pointShapes.v4p" componentmode="Hidden" id="3972" stayontop="1">
+   <NODE systemname="pointShapes" filename="subpatches\pointShapes.v4p" nodename="subpatches\pointShapes.v4p" componentmode="InAWindow" id="3972" stayontop="1">
    <BOUNDS type="Node" left="20179" top="11924" width="1170" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="8877" top="1875" width="22605" height="35550">
    </BOUNDS>
-   <BOUNDS type="Window" left="1275" top="1935" width="15720" height="12855">
+   <BOUNDS type="Window" left="8040" top="1890" width="15705" height="12855">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="3972" srcpinname="Output 1" dstnodeid="370" dstpinname="Z">
@@ -2717,7 +2717,7 @@
    <LINK srcnodeid="2080" srcpinname="Render State" dstnodeid="2068" dstpinname="Render State">
    </LINK>
    <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="4423">
-   <BOUNDS type="Node" left="19455" top="29445" width="100" height="100">
+   <BOUNDS type="Node" left="19545" top="29385" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -2727,7 +2727,7 @@
    <LINK srcnodeid="4423" srcpinname="Output" dstnodeid="4418" dstpinname="Color Input">
    </LINK>
    <NODE systemname="NOT (Boolean)" nodename="NOT (Boolean)" componentmode="Hidden" id="4425">
-   <BOUNDS type="Node" left="19815" top="28755" width="100" height="100">
+   <BOUNDS type="Node" left="19905" top="28695" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -2741,7 +2741,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="10848" top="20400" width="4735" height="3570">
    </BOUNDS>
-   <BOUNDS type="Window" left="630" top="300" width="4725" height="3570">
+   <BOUNDS type="Window" left="2055" top="1260" width="3675" height="3225">
    </BOUNDS>
    </NODE>
    <NODE systemname="SceneProgres" filename="SceneProgres.v4p" nodename="subpatches\SceneProgres.v4p" componentmode="Hidden" id="4464" stayontop="1">
@@ -2753,11 +2753,11 @@
    </BOUNDS>
    </NODE>
    <NODE systemname="blink" filename="subpatches\blink.v4p" nodename="subpatches\blink.v4p" componentmode="Hidden" id="4463">
-   <BOUNDS type="Node" left="19808" top="27720" width="5100" height="270">
+   <BOUNDS type="Node" left="19898" top="27660" width="5100" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="14628" top="23635" width="10360" height="8170">
+   <BOUNDS type="Box" left="14718" top="23575" width="10360" height="8170">
    </BOUNDS>
-   <BOUNDS type="Window" left="13005" top="2190" width="12840" height="10230">
+   <BOUNDS type="Window" left="8535" top="2820" width="12840" height="11835">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="4463" srcpinname="Y Output Value" dstnodeid="4425" dstpinname="Input">
