@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" systemname="blink" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" scrollx="1815" scrolly="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" systemname="blink" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" scrollx="3885" scrolly="3300">
    <BOUNDS type="Window" left="9750" top="5100" width="12840" height="11835">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -55,7 +55,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5145" top="8205" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -285,9 +285,9 @@
    <NODE id="26" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="|Y Output Value|">
    </PIN>
-   <BOUNDS type="Box" left="6015" top="11280" width="750" height="240">
+   <BOUNDS type="Box" left="6945" top="11055" width="750" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="6015" top="11280" width="750" height="240">
+   <BOUNDS type="Node" left="6945" top="11055" width="750" height="240">
    </BOUNDS>
    <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
@@ -445,13 +445,13 @@
    <NODE systemname="Sequencer (Animation Advanced)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.SequencerAdvanced.dll" nodename="Sequencer (Animation Advanced)" componentmode="Hidden" id="38">
    <BOUNDS type="Node" left="5130" top="9525" width="9135" height="270">
    </BOUNDS>
-   <PIN pinname="Load" slicecount="1" values="0" visible="1">
+   <PIN pinname="Load" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Track Id" visible="1">
    </PIN>
-   <PIN pinname="Clear" slicecount="1" values="0" visible="1">
+   <PIN pinname="Clear" slicecount="1" visible="1" values="0">
    </PIN>
-   <PIN pinname="Seek Position" slicecount="1" values="0.8" visible="1">
+   <PIN pinname="Seek Position" slicecount="1" visible="1" values="0.8">
    </PIN>
    </NODE>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="38" dstpinname="Play">
@@ -500,21 +500,7 @@
    <LINKPOINT x="11430" y="6045">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="11" srcpinname="Output 1" dstnodeid="38" dstpinname="Load" linkstyle="Bezier">
-   <LINKPOINT x="10740" y="6653">
-   </LINKPOINT>
-   <LINKPOINT x="12825" y="6653">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="34" srcpinname="Output" dstnodeid="39" dstpinname="Index">
-   </LINK>
-   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="5" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="11" srcpinname="Output 1" dstnodeid="6" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="10725" y="4673">
-   </LINKPOINT>
-   <LINKPOINT x="10725" y="4673">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="40">
    <BOUNDS type="Node" left="10035" top="8985" width="100" height="100">
@@ -553,5 +539,19 @@
    <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="40" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="40" srcpinname="Output" dstnodeid="38" dstpinname="Seek Position">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output 1" dstnodeid="38" dstpinname="Load" linkstyle="Bezier">
+   <LINKPOINT x="10740" y="6653">
+   </LINKPOINT>
+   <LINKPOINT x="12825" y="6653">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output 1" dstnodeid="6" dstpinname="Y Input Value" linkstyle="Bezier">
+   <LINKPOINT x="10725" y="4673">
+   </LINKPOINT>
+   <LINKPOINT x="10725" y="4673">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Output" dstnodeid="5" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
