@@ -641,7 +641,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5745" top="6525" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Microsoft GS Wavetable Synth|">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|USB Midi Cable|">
    </PIN>
    <PIN pinname="Output Enum" visible="1">
    </PIN>
@@ -1429,7 +1429,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="17070" top="8700" width="795" height="240">
+   <BOUNDS type="Box" left="17070" top="8700" width="1830" height="255">
    </BOUNDS>
    <BOUNDS type="Node" left="17070" top="8700" width="0" height="0">
    </BOUNDS>

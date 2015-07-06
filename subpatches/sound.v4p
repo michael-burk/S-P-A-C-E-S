@@ -199,7 +199,7 @@
    </PIN>
    <PIN pinname="Evaluate" visible="1" pintype="Input">
    </PIN>
-   <PIN pinname="Pan" visible="1">
+   <PIN pinname="Pan" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Init" visible="1">
    </PIN>
@@ -229,8 +229,6 @@
    <LINK srcnodeid="7" srcpinname="Output" dstnodeid="30" dstpinname="CutOff">
    </LINK>
    <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Do Send - Enabled">
-   </LINK>
-   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="30" dstpinname="Pan">
    </LINK>
    <LINK srcnodeid="9" srcpinname="Output" dstnodeid="30" dstpinname="Pitch Bend">
    </LINK>
@@ -333,5 +331,7 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Init">
+   </LINK>
+   <LINK srcnodeid="28" srcpinname="Output" dstnodeid="30" dstpinname="Pan">
    </LINK>
    </PATCH>

@@ -1,9 +1,9 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\Performance.v4p" systemname="Performance" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\Performance.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\Performance.v4p" systemname="Performance" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\Performance.v4p" scrollx="0" scrolly="0">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="2205" top="2070" width="1065" height="525">
+   <BOUNDS type="Box" left="1230" top="1200" width="1065" height="525">
    </BOUNDS>
-   <BOUNDS type="Node" left="2205" top="2070" width="0" height="0">
+   <BOUNDS type="Node" left="1230" top="1200" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -13,13 +13,13 @@
    </PIN>
    </NODE>
    <NODE systemname="PerfMeter (DX11 Advanced)" filename="%VVVV%\packs\mcropack\nodes\modules\PerfMeter (DX11 Advanced).v4p" nodename="PerfMeter (DX11 Advanced)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="1500" top="1515" width="100" height="100">
+   <BOUNDS type="Node" left="525" top="645" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="MainLoop (VVVV)" nodename="MainLoop (VVVV)" componentmode="Hidden" id="-6">
-   <BOUNDS type="Node" left="3135" top="1500" width="100" height="100">
+   <BOUNDS type="Node" left="2160" top="630" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Time Mode" slicecount="1" values="Filtered">
    </PIN>
@@ -28,10 +28,28 @@
    </NODE>
    <LINK srcnodeid="1" srcpinname="fps" dstnodeid="0" dstpinname="Y Input Value">
    </LINK>
-   <BOUNDS type="Window" left="-1" top="-1" width="4735" height="3570">
+   <BOUNDS type="Window" left="1215" top="0" width="4965" height="4425">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="2790" top="3000" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2790" top="3000" width="1560" height="315">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="R (String)" id="5" systemname="R (String)">
+   <BOUNDS type="Node" left="2805" top="1965" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|Current Action|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Input Value" dstnodeid="4" dstpinname="Input String">
+   </LINK>
    </PATCH>

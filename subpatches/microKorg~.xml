@@ -939,7 +939,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="19800" top="14025" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" values="|USB Midi Cable|">
+   <PIN pinname="Input Enum" slicecount="1" values="|Microsoft GS Wavetable Synth|">
    </PIN>
    </NODE>
    <NODE systemname="MidiBendOut (Devices)" filename="%VVVV%\lib\nodes\modules\Devices\MidiBendOut (Devices).v4p" nodename="MidiBendOut (Devices)" componentmode="Hidden" id="74">
@@ -1429,7 +1429,7 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="141" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="17070" top="8700" width="795" height="240">
+   <BOUNDS type="Box" left="17070" top="8700" width="1830" height="255">
    </BOUNDS>
    <BOUNDS type="Node" left="17070" top="8700" width="0" height="0">
    </BOUNDS>
@@ -1451,7 +1451,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="17415" top="9045" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|USB Midi Cable|">
+   <PIN pinname="Input Enum" slicecount="1" visible="1" values="|Microsoft GS Wavetable Synth|">
    </PIN>
    </NODE>
    <LINK srcnodeid="140" srcpinname="Output Enum" dstnodeid="142" dstpinname="Midi Output Port">

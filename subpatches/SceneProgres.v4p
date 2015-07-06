@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="8760" top="1125" width="12645" height="12405">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="15" scrolly="0">
+   <BOUNDS type="Window" left="10500" top="1455" width="12645" height="12405">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -167,7 +167,7 @@
    </BOUNDS>
    <BOUNDS height="2700" left="6450" top="1170" type="Box" width="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="12" values="10,10,10,10,10,10,10,10,10,10,10,10">
+   <PIN pinname="Y Input Value" slicecount="12" values="30,30,30,30,30,30,30,30,30,30,30,30">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -311,9 +311,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="27" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="2925" top="6465" width="0" height="0">
+   <BOUNDS type="Node" left="2760" top="6990" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="2925" top="6465" width="1170" height="300">
+   <BOUNDS type="Box" left="2760" top="6990" width="1170" height="300">
    </BOUNDS>
    <PIN pinname="Default" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -477,5 +477,13 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="32" srcpinname="Output" dstnodeid="38" dstpinname="Input Value">
+   </LINK>
+   <NODE nodename="S (String)" id="39" systemname="S (String)">
+   <BOUNDS type="Node" left="840" top="7050" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="|Current Action|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="28" srcpinname="Current Action" dstnodeid="39" dstpinname="Input Value">
    </LINK>
    </PATCH>

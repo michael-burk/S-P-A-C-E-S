@@ -28,10 +28,28 @@
    </NODE>
    <LINK srcnodeid="1" srcpinname="fps" dstnodeid="0" dstpinname="Y Input Value">
    </LINK>
-   <BOUNDS type="Window" left="630" top="300" width="3675" height="3225">
+   <BOUNDS type="Window" left="1215" top="0" width="4965" height="4425">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
    <PACK Name="addonpack" Version="33.3.0">
    </PACK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="4">
+   <BOUNDS type="Node" left="2850" top="2250" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2850" top="2250" width="1560" height="315">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="R (String)" id="5" systemname="R (String)">
+   <BOUNDS type="Node" left="2865" top="1650" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|Current Action|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Input Value" dstnodeid="4" dstpinname="Input String">
+   </LINK>
    </PATCH>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="5040" scrolly="2910">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="3660" scrolly="4275">
    <BOUNDS type="Window" left="9120" top="3000" width="15360" height="11790">
    </BOUNDS>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
@@ -677,7 +677,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9870" top="7500" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -687,7 +687,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <LINK srcnodeid="440" srcpinname="Y Output Value" dstnodeid="439" dstpinname="Switch">
@@ -825,5 +825,15 @@
    <LINK srcnodeid="450" srcpinname="Output" dstnodeid="449" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="449" srcpinname="OnChange" dstnodeid="448" dstpinname="Set">
+   </LINK>
+   <NODE nodename="R (Value)" id="451" systemname="R (Value)">
+   <BOUNDS type="Node" left="9840" top="6915" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="Pinch!">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="451" srcpinname="Input Value" dstnodeid="440" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
