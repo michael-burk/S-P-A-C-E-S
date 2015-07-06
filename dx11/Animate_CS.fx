@@ -2,6 +2,7 @@ bool reset;
 float3 gravity;
 int pCount;
 bool doReturn = false;
+bool doReturnX = false;
 float swirlFactor = 0.00001;
 float steerAwayFactor = .01;
 bool bounds;
@@ -335,6 +336,16 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		if(doReturn)
 		{
 			float3 desired = resetData[DTid.x].xyz  - Output[DTid.x].pos;
+			
+			desired *= returnFactor;
+			desired = desired - Output[DTid.x].vel;
+			
+			v += desired;
+			
+		} else if(doReturnX)
+		{
+			float3 returnPos = float3(resetData[DTid.x].x, Output[DTid.x].pos.y, Output[DTid.x].pos.z);
+			float3 desired = returnPos  - Output[DTid.x].pos;
 			
 			desired *= returnFactor;
 			desired = desired - Output[DTid.x].vel;

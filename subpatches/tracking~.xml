@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="4515" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
-   <BOUNDS type="Window" left="5310" top="0" width="10455" height="14775">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="3495" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <BOUNDS type="Window" left="9960" top="375" width="10455" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
    </PACK>
@@ -30,12 +30,12 @@
    <PIN pinname="Input Node" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="291" stayontop="0">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="291" stayontop="0">
    <BOUNDS type="Node" left="9300" top="8925" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="9300" top="8925" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="20370" top="0" width="4830" height="5085">
+   <BOUNDS type="Window" left="20370" top="0" width="4830" height="4965">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -161,7 +161,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Average Framerate|">
    </PIN>
-   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="44.57">
+   <PIN pinname="Y Input Value" visible="1" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="435" systemname="IOBox (Value Advanced)">
@@ -1019,7 +1019,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9840" top="2325" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1029,7 +1029,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -1057,7 +1057,7 @@
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="9915" top="2730" width="15000" height="11115">
+   <BOUNDS type="Window" left="10200" top="3720" width="15000" height="11115">
    </BOUNDS>
    <PIN pinname="Evaluate" visible="1" pintype="Input">
    </PIN>

@@ -125,7 +125,7 @@
    </PIN>
    </NODE>
    <NODE nodename="S (Value)" id="5" systemname="S (Value)">
-   <BOUNDS type="Node" left="2775" top="5940" width="0" height="0">
+   <BOUNDS type="Node" left="3270" top="6450" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Send String" slicecount="1" values="|Scene Change - Action First Frame|">
    </PIN>

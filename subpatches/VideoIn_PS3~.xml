@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="0" scrolly="3135" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
-   <BOUNDS height="11115" left="9915" top="2730" type="Window" width="15000">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="0" scrolly="7440" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
+   <BOUNDS height="11115" left="10200" top="3720" type="Window" width="15000">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -231,7 +231,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Valid">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE id="314" nodename="VIDEOTEXTURE (EX9.TEXTURE VMR9)" systemname="VideoTexture (EX9.Texture VMR9)">
@@ -512,44 +512,26 @@
    <PIN pinname="Texture In" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="479" stayontop="1">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="479" stayontop="1">
    <BOUNDS type="Node" left="6870" top="13395" width="100" height="100">
    </BOUNDS>
    <BOUNDS type="Box" left="6870" top="13395" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="3000" top="2145" width="15720" height="12315">
+   <BOUNDS type="Window" left="10770" top="1275" width="13605" height="13635">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="DX9ToDX11 (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\modules\DX9ToDX11 (DX11.Texture 2d).v4p" nodename="DX9ToDX11 (DX11.Texture 2d)" componentmode="Hidden" id="487" stayontop="1">
-   <BOUNDS type="Node" left="4380" top="14010" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Window" left="9135" top="4500" width="8010" height="5280">
-   </BOUNDS>
-   <PIN pinname="Texture In" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Texture Out" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="487" srcpinname="Valid" dstnodeid="289" dstpinname="Y Input Value">
-   </LINK>
-   <LINK srcnodeid="487" srcpinname="Texture Out" dstnodeid="442" dstpinname="Texture In">
-   </LINK>
-   <LINK srcnodeid="487" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
-   </LINK>
    <NODE systemname="TransformTexture (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Filter\TransformTexture.tfx" nodename="TransformTexture (DX11.TextureFX)" componentmode="Hidden" id="529">
    <BOUNDS type="Node" left="4365" top="15660" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Texture In" visible="1">
+   <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Texture Out" visible="1">
    </PIN>
    <PIN pinname="tTex" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="487" srcpinname="Texture Out" dstnodeid="529" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="529" srcpinname="Texture Out" dstnodeid="98" dstpinname="Input Node">
    </LINK>
    <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="530">
@@ -569,22 +551,38 @@
    <LINK srcnodeid="314" srcpinname="Texture Out" dstnodeid="376" dstpinname="Texture">
    </LINK>
    <NODE systemname="Quad (DX9)" filename="" nodename="Quad (DX9)" componentmode="Hidden" id="565">
-   <BOUNDS type="Node" left="420" top="9555" width="100" height="100">
+   <BOUNDS type="Node" left="390" top="9345" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="580">
+   <NODE systemname="DX9ToDX11 (DX11.Texture 2d)" filename="%VVVV%\packs\dx11\nodes\modules\DX9ToDX11 (DX11.Texture 2d).v4p" nodename="DX9ToDX11 (DX11.Texture 2d)" componentmode="Hidden" id="584" stayontop="1">
+   <BOUNDS type="Node" left="4380" top="14010" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Window" left="9135" top="4500" width="8010" height="5280">
+   </BOUNDS>
+   <PIN pinname="Texture In" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="584" srcpinname="Valid" dstnodeid="289" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="442" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="529" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="595">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="580" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="595" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="580" srcpinname="Texture Out" dstnodeid="487" dstpinname="Texture In">
+   <LINK srcnodeid="595" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="376" srcpinname="Layer" dstnodeid="441" dstpinname="Layers">
    </LINK>

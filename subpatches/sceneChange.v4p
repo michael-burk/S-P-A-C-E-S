@@ -242,4 +242,12 @@
    </LINK>
    <LINK srcnodeid="12" srcpinname="OnChange" dstnodeid="1" dstpinname="Y Input Value">
    </LINK>
+   <NODE nodename="S (Value)" id="13" systemname="S (Value)">
+   <BOUNDS type="Node" left="4635" top="5535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="|SceneChange - Action Last Frame|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y" dstnodeid="13" dstpinname="Input Value">
+   </LINK>
    </PATCH>
