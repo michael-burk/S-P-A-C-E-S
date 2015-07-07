@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="330" scrolly="675">
-   <BOUNDS type="Window" left="4500" top="210" width="12165" height="8340">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="1440" scrolly="0">
+   <BOUNDS type="Window" left="8820" top="315" width="16080" height="11100">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -47,6 +47,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="8415" top="4575" type="Node" width="100">
@@ -70,6 +72,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Reset">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="3" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -203,6 +207,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="9" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="6735" top="4575" type="Node" width="100">
@@ -226,6 +232,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Back">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="10" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -251,6 +259,8 @@
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="11" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="9300" top="4575" type="Node" width="100">
@@ -274,6 +284,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Loop">
    </PIN>
    <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE id="24" componentmode="InABox" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -561,13 +573,13 @@
    </PIN>
    </NODE>
    <NODE nodename="S (String)" id="46" systemname="S (String)">
-   <BOUNDS type="Node" left="4440" top="4260" width="0" height="0">
+   <BOUNDS type="Node" left="12045" top="4410" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Send String" slicecount="1" values="SceneNames">
    </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="0" srcpinname="Output String" dstnodeid="46" dstpinname="Input Value">
-   </LINK>
    <NODE componentmode="InABox" id="48" nodename="IOBox (String)" systemname="IOBox (String)">
    <BOUNDS height="100" left="13455" top="5535" type="Node" width="100">
    </BOUNDS>
@@ -623,6 +635,8 @@
    </PIN>
    <PIN pinname="Show SliceIndex" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="50" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="15810" top="1455" type="Node" width="100">
@@ -640,6 +654,8 @@
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="|Action Time|">
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
    </NODE>
    <NODE systemname="DeleteSlice (String)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="DeleteSlice (String)" componentmode="Hidden" id="49">
@@ -693,5 +709,7 @@
    <LINK srcnodeid="48" srcpinname="Output String" dstnodeid="0" dstpinname="Input String">
    </LINK>
    <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Output String" dstnodeid="46" dstpinname="Input Value">
    </LINK>
    </PATCH>

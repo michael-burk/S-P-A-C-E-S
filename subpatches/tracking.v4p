@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="10725" scrolly="3360" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\tracking.v4p" locked="0" scrollx="0" scrolly="0" systemname="tracking" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\tracking.v4p">
    <BOUNDS type="Window" left="9975" top="375" width="12165" height="14775">
    </BOUNDS>
    <PACK Name="VVVV.Packs" Version="0.2.0">
@@ -777,7 +777,7 @@
    <NODE id="629" systemname="UniformScale (Transform)" nodename="UniformScale (Transform)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
    <PIN pinname="Transform In" visible="1" pintype="Input">
    </PIN>
-   <PIN pinname="XYZ" slicecount="1" pintype="Input" visible="1" values="0.09">
+   <PIN pinname="XYZ" slicecount="1" pintype="Input" visible="1" values="0.2">
    </PIN>
    <BOUNDS type="Node" left="3030" top="6810" width="100" height="100">
    </BOUNDS>
@@ -967,7 +967,7 @@
    <LINK srcnodeid="643" srcpinname="Geometry Out" dstnodeid="636" dstpinname="Geometry">
    </LINK>
    <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="644">
-   <BOUNDS type="Node" left="3675" top="4425" width="100" height="100">
+   <BOUNDS type="Node" left="5790" top="6045" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -979,9 +979,9 @@
    <LINK srcnodeid="631" srcpinname="PositionXY" dstnodeid="644" dstpinname="Input 1">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="645" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5145" top="3810" width="690" height="1695">
+   <BOUNDS type="Box" left="6015" top="4020" width="690" height="1695">
    </BOUNDS>
-   <BOUNDS type="Node" left="5145" top="3810" width="0" height="0">
+   <BOUNDS type="Node" left="6015" top="4020" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="8" visible="1" values="0.08,-0.09,0.03,0,0.28,-0.09,0.1,0.18">
    </PIN>
@@ -999,8 +999,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="645" srcpinname="Y Output Value" dstnodeid="644" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="631" srcpinname="PositionXY" dstnodeid="630" dstpinname="TranslateXY">
    </LINK>
    <LINK srcnodeid="528" srcpinname="Y Output Value" dstnodeid="634" dstpinname="Texture SizeXY" linkstyle="Bezier">
    <LINKPOINT x="8895" y="10688">
@@ -1085,9 +1083,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="650" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4965" top="7320" width="480" height="480">
+   <BOUNDS type="Box" left="5115" top="6990" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="4965" top="7320" width="0" height="0">
+   <BOUNDS type="Node" left="5115" top="6990" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
@@ -1115,5 +1113,7 @@
    <LINK srcnodeid="651" srcpinname="Transform Out" dstnodeid="447" dstpinname="Transform">
    </LINK>
    <LINK srcnodeid="498" srcpinname="Transform Out" dstnodeid="651" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="644" srcpinname="Output" dstnodeid="630" dstpinname="TranslateXY">
    </LINK>
    </PATCH>

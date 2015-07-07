@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="0" scrolly="4335">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="2535" scrolly="7605">
    <BOUNDS height="14715" left="9225" top="0" type="Window" width="18030">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
@@ -31,7 +31,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="303">
-   <BOUNDS type="Node" left="5850" top="17145" width="100" height="100">
+   <BOUNDS type="Node" left="5790" top="17325" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 2" slicecount="1" visible="1" values="64">
    </PIN>
@@ -41,9 +41,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="305" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Node" left="6087" top="16590" width="0" height="0">
+   <BOUNDS type="Node" left="6027" top="16770" width="0" height="0">
    </BOUNDS>
-   <BOUNDS type="Box" left="6087" top="16590" width="465" height="240">
+   <BOUNDS type="Box" left="6027" top="16770" width="465" height="240">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="64">
    </PIN>
@@ -385,9 +385,9 @@
    </LINKPOINT>
    </LINK>
    <NODE systemname="Dispatcher (DX11.Drawer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Dispatcher (DX11.Drawer)" componentmode="Hidden" id="1943">
-   <BOUNDS type="Node" left="5850" top="17880" width="100" height="100">
+   <BOUNDS type="Node" left="5790" top="18060" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="5850" top="17880">
+   <BOUNDS type="Box" left="5790" top="18060">
    </BOUNDS>
    <PIN pinname="Thread X" slicecount="1" visible="1" values="0">
    </PIN>
@@ -499,7 +499,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="20175" top="33585" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.08">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.03">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -765,7 +765,7 @@
    </PIN>
    </NODE>
    <NODE id="1037" nodename="S (Node)" systemname="S (Node)">
-   <BOUNDS type="Node" left="5670" top="18450" width="0" height="0">
+   <BOUNDS type="Node" left="5610" top="18630" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Send String" slicecount="1" values="mainDispatcher">
    </PIN>
@@ -951,7 +951,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="8430" top="33180" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -961,7 +961,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="3167" srcpinname="Y Output Value" dstnodeid="3166" dstpinname="Switch">
@@ -1461,9 +1461,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="294" srcpinname="Y Output Value" dstnodeid="303" dstpinname="Input" hiddenwhenlocked="1" linkstyle="Bezier">
-   <LINKPOINT x="4100" y="13508">
+   <LINKPOINT x="4080" y="13568">
    </LINKPOINT>
-   <LINKPOINT x="5830" y="13613">
+   <LINKPOINT x="5790" y="13733">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Power (Value)" nodename="Power (Value)" componentmode="Hidden" id="3990">
@@ -1995,9 +1995,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="4241">
-   <BOUNDS type="Node" left="10890" top="23250" width="100" height="100">
+   <BOUNDS type="Node" left="10860" top="23445" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="10890" top="23250" width="480" height="480">
+   <BOUNDS type="Box" left="10860" top="23445" width="480" height="480">
    </BOUNDS>
    <PIN pinname="Value Type" slicecount="1" values="Boolean">
    </PIN>
@@ -2227,7 +2227,7 @@
    <LINK srcnodeid="4241" srcpinname="Y Output Value" dstnodeid="4248" dstpinname="Input Value">
    </LINK>
    <NODE systemname="Frac (Value)" nodename="Frac (Value)" componentmode="Hidden" id="4356">
-   <BOUNDS type="Node" left="5835" top="17490" width="100" height="100">
+   <BOUNDS type="Node" left="5775" top="17670" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -2377,7 +2377,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="11319" top="20862" width="12460" height="11415">
    </BOUNDS>
-   <BOUNDS type="Window" left="4350" top="0" width="12165" height="8340">
+   <BOUNDS type="Window" left="8820" top="315" width="16080" height="11100">
    </BOUNDS>
    </NODE>
    <NODE systemname="blink" filename="subpatches\blink.v4p" nodename="subpatches\blink.v4p" componentmode="Hidden" id="4463" stayontop="1">
@@ -2521,7 +2521,7 @@
    </PIN>
    <PIN pinname="doReturn">
    </PIN>
-   <PIN pinname="friction" slicecount="1" values="2">
+   <PIN pinname="friction" slicecount="1" values="5">
    </PIN>
    <PIN pinname="bounceFactor" slicecount="1" values="0">
    </PIN>
@@ -2534,6 +2534,8 @@
    <PIN pinname="bounce" slicecount="1" values="1">
    </PIN>
    <PIN pinname="bounds" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="steerAwayFactor" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="309" srcpinname="Y Output Value" dstnodeid="4488" dstpinname="gravityXYZ">
@@ -2579,8 +2581,6 @@
    <LINK srcnodeid="4004" srcpinname="Texture Out" dstnodeid="4488" dstpinname="borderTex">
    </LINK>
    <LINK srcnodeid="4030" srcpinname="Buffer" dstnodeid="4488" dstpinname="dead">
-   </LINK>
-   <LINK srcnodeid="836" srcpinname="Y Output Value" dstnodeid="4488" dstpinname="steerAwayFactor">
    </LINK>
    <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="4490">
    <BOUNDS type="Node" left="17340" top="12825" width="100" height="100">
@@ -2779,9 +2779,9 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="4514" srcpinname="Fix!" dstnodeid="4241" dstpinname="Y Input Value" linkstyle="Bezier">
-   <LINKPOINT x="10260" y="18765">
+   <LINKPOINT x="10250" y="18830">
    </LINKPOINT>
-   <LINKPOINT x="10905" y="18765">
+   <LINKPOINT x="10885" y="18895">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="4512" srcpinname="Output" dstnodeid="4488" dstpinname="doReturnX">
@@ -2794,7 +2794,7 @@
    </LINK>
    <LINK srcnodeid="356" srcpinname="Layer Out" dstnodeid="4513" dstpinname="Layers">
    </LINK>
-   <NODE systemname="pointShapes" filename="subpatches\pointShapes.v4p" nodename="subpatches\pointShapes.v4p" componentmode="InAWindow" id="3972" stayontop="0" debug="0">
+   <NODE systemname="pointShapes" filename="subpatches\pointShapes.v4p" nodename="subpatches\pointShapes.v4p" componentmode="Hidden" id="3972" stayontop="0" debug="0">
    <BOUNDS type="Node" left="20179" top="11924" width="1170" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="8877" top="1875" width="22605" height="35550">
@@ -2808,6 +2808,42 @@
    </LINK>
    <LINK srcnodeid="4512" srcpinname="gavity" dstnodeid="309" dstpinname="Y Input Value">
    </LINK>
-   <LINK srcnodeid="4359" srcpinname="Layer Out" dstnodeid="356" dstpinname="Layer 3">
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="4517">
+   <BOUNDS type="Node" left="9360" top="16920" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="836" srcpinname="Y Output Value" dstnodeid="4517" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="4517" srcpinname="Output" dstnodeid="4488" dstpinname="steerAwayFactor">
+   </LINK>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="4519">
+   <BOUNDS type="Node" left="9840" top="16365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4473" srcpinname="Y Output Value" dstnodeid="4519" dstpinname="Set" linkstyle="PolyLine">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="4518">
+   <BOUNDS type="Node" left="10605" top="16845" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4519" srcpinname="Inverse Output" dstnodeid="4518" dstpinname="Go To Position">
+   </LINK>
+   <LINK srcnodeid="4518" srcpinname="Position Out" dstnodeid="4517" dstpinname="Input 2">
    </LINK>
    </PATCH>

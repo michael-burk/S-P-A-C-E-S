@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="3660" scrolly="4275">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\verlet.v4p" systemname="verlet_test" filename="C:\Users\Michi\Desktop\verlet_test.v4p" bgcolor="15329769" scrollx="1395" scrolly="9015">
    <BOUNDS type="Window" left="9120" top="3000" width="15360" height="11790">
    </BOUNDS>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="131">
@@ -784,8 +784,6 @@
    </NODE>
    <LINK srcnodeid="447" srcpinname="Y Output Value" dstnodeid="445" dstpinname="Switch">
    </LINK>
-   <LINK srcnodeid="446" srcpinname="Position Out" dstnodeid="399" dstpinname="strength">
-   </LINK>
    <LINK srcnodeid="433" srcpinname="Buffer" dstnodeid="399" dstpinname="dead">
    </LINK>
    <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="448">
@@ -835,5 +833,105 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="451" srcpinname="Input Value" dstnodeid="440" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="452">
+   <BOUNDS type="Node" left="8970" top="16125" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="459">
+   <BOUNDS type="Node" left="10365" top="17805" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="458">
+   <BOUNDS type="Node" left="10350" top="16335" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="10350" top="16335" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="458" srcpinname="Y Output Value" dstnodeid="459" dstpinname="Set" linkstyle="PolyLine">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="457">
+   <BOUNDS type="Node" left="11130" top="18285" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="459" srcpinname="Inverse Output" dstnodeid="457" dstpinname="Go To Position">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="456" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="11115" top="18660" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="11115" top="18660" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="457" srcpinname="Position Out" dstnodeid="456" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="R (Value)" id="455" systemname="R (Value)">
+   <BOUNDS type="Node" left="10335" top="15360" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|SceneChange - Action Last Frame|">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="454">
+   <BOUNDS type="Node" left="10335" top="15780" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="455" srcpinname="Input Value" dstnodeid="454" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="454" srcpinname="Output" dstnodeid="458" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="R (Value)" id="453" systemname="R (Value)">
+   <BOUNDS type="Node" left="10665" top="14640" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|Random Change - Action Last Frame|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="453" srcpinname="Input Value" dstnodeid="454" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="375" srcpinname="Y Output Value" dstnodeid="452" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="456" srcpinname="Y Output Value" dstnodeid="452" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="375" srcpinname="Y Output Value" dstnodeid="399" dstpinname="strength">
    </LINK>
    </PATCH>
