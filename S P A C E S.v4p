@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="2535" scrolly="7605">
-   <BOUNDS height="14715" left="9225" top="0" type="Window" width="18030">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\S P A C E S.v4p" filename="C:\Users\Michael\Desktop\MASTER\_MASTER.v4p" systemname="_MASTER" bgcolor="15132390" locked="0" scrollx="1335" scrolly="32655">
+   <BOUNDS height="14715" left="9225" top="0" type="Window" width="15405">
    </BOUNDS>
    <NODE systemname="Blend (DX11.RenderState)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Blend (DX11.RenderState)" componentmode="Hidden" id="253" hiddenwhenlocked="0">
    <BOUNDS type="Node" left="3510" top="32025" width="100" height="100">
@@ -907,7 +907,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4410" top="39060" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -919,7 +919,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Fullscreen">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -1011,7 +1011,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="9435" top="39375" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -1021,7 +1021,7 @@
    </PIN>
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE id="1505" componentmode="Hidden" systemname="tracking" filename="subpatches\tracking.v4p" nodename="subpatches\tracking.v4p" debug="0" stayontop="0">
@@ -1029,7 +1029,7 @@
    </PIN>
    <PIN pinname="Tracking Texture" visible="1">
    </PIN>
-   <BOUNDS type="Window" left="9975" top="375" width="12165" height="14775">
+   <BOUNDS type="Window" left="11415" top="540" width="12165" height="14775">
    </BOUNDS>
    <BOUNDS type="Node" left="14175" top="16455" width="100" height="100">
    </BOUNDS>
@@ -1044,6 +1044,12 @@
    <PIN pinname="Layer" visible="1">
    </PIN>
    <PIN pinname="Evaluate" visible="1" pintype="Input" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Camera" visible="1">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="CameraOut" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="1505" srcpinname="Average Framerate" dstnodeid="3151" dstpinname="Y Input Value">
@@ -2722,8 +2728,8 @@
    </NODE>
    <LINK srcnodeid="4512" srcpinname="doReturn" dstnodeid="4488" dstpinname="doReturn">
    </LINK>
-   <NODE id="4513" componentmode="InAWindow" systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" hiddenwhenlocked="0" stayontop="0">
-   <BOUNDS type="Window" left="345" top="5925" width="8580" height="8925">
+   <NODE id="4513" componentmode="FullScreen" systemname="Renderer (DX11)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11)" hiddenwhenlocked="0" stayontop="0">
+   <BOUNDS type="Window" left="26175" top="1275" width="8580" height="8925">
    </BOUNDS>
    <BOUNDS type="Node" left="3075" top="39795" width="2985" height="270">
    </BOUNDS>
@@ -2792,8 +2798,6 @@
    </LINK>
    <LINK srcnodeid="3137" srcpinname="Layer" dstnodeid="3166" dstpinname="Input 2">
    </LINK>
-   <LINK srcnodeid="356" srcpinname="Layer Out" dstnodeid="4513" dstpinname="Layers">
-   </LINK>
    <NODE systemname="pointShapes" filename="subpatches\pointShapes.v4p" nodename="subpatches\pointShapes.v4p" componentmode="Hidden" id="3972" stayontop="0" debug="0">
    <BOUNDS type="Node" left="20179" top="11924" width="1170" height="270">
    </BOUNDS>
@@ -2845,5 +2849,17 @@
    <LINK srcnodeid="4519" srcpinname="Inverse Output" dstnodeid="4518" dstpinname="Go To Position">
    </LINK>
    <LINK srcnodeid="4518" srcpinname="Position Out" dstnodeid="4517" dstpinname="Input 2">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="4520" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="4350" top="36525" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4350" top="36525" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1505" srcpinname="Camera" dstnodeid="4520" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="356" srcpinname="Layer Out" dstnodeid="4513" dstpinname="Layers">
    </LINK>
    </PATCH>

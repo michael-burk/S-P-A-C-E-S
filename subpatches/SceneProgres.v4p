@@ -17,7 +17,7 @@
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope" visible="1">
+   <PIN pinname="Input String" slicecount="12" encoded="0" visible="1" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
    </PIN>
    <PIN pinname="Output String" visible="1">
    </PIN>
@@ -171,7 +171,7 @@
    </BOUNDS>
    <BOUNDS height="2700" left="6450" top="1170" type="Box" width="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="12" values="30,30,30,30,3,3,30,30,60,60,60,60" visible="1">
+   <PIN pinname="Y Input Value" slicecount="12" visible="1" values="30,30,30,30,3,3,30,30,60,60,60,60">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -603,7 +603,7 @@
    </BOUNDS>
    <BOUNDS height="2700" left="15765" top="5535" type="Box" width="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="12" values="30,30,30,30,3,3,30,30,60,60,60,60" visible="1">
+   <PIN pinname="Y Input Value" slicecount="12" visible="1" values="30,30,30,30,3,3,30,30,60,60,60,60">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -627,7 +627,7 @@
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
+   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape2,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
    </PIN>
    <PIN pinname="Output String" visible="1">
    </PIN>
