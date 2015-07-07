@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="0" scrolly="7440" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
-   <BOUNDS height="11115" left="10200" top="3720" type="Window" width="15000">
+   <BOUNDS height="11115" left="11370" top="2715" type="Window" width="15000">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -512,12 +512,12 @@
    <PIN pinname="Texture In" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="InAWindow" id="479" stayontop="1">
-   <BOUNDS type="Node" left="6870" top="13395" width="100" height="100">
+   <NODE systemname="Preview (DX11.Texture)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Preview (DX11.Texture)" componentmode="Hidden" id="479" stayontop="1">
+   <BOUNDS type="Node" left="7425" top="14235" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="6870" top="13395" width="6000" height="4500">
+   <BOUNDS type="Box" left="7425" top="14235" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="10770" top="1275" width="13605" height="13635">
+   <BOUNDS type="Window" left="-255" top="5145" width="10770" height="9615">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -563,27 +563,53 @@
    </BOUNDS>
    <PIN pinname="Texture In" slicecount="1" values="||">
    </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="584" srcpinname="Valid" dstnodeid="289" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="442" dstpinname="Texture In">
    </LINK>
-   <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
-   </LINK>
    <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="529" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="595">
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="596">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="595" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="596" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="595" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
+   <LINK srcnodeid="596" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
    </LINK>
    <LINK srcnodeid="376" srcpinname="Layer" dstnodeid="441" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="TransformTexture (DX11.TextureFX)" filename="%VVVV%\packs\dx11\nodes\texture11\Filter\TransformTexture.tfx" nodename="TransformTexture (DX11.TextureFX)" componentmode="Hidden" id="597">
+   <BOUNDS type="Node" left="8175" top="13725" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture In" visible="1">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   <PIN pinname="tTex" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="597" dstpinname="Texture In">
+   </LINK>
+   <LINK srcnodeid="597" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
+   </LINK>
+   <NODE systemname="Scale (Transform)" nodename="Scale (Transform)" componentmode="Hidden" id="598">
+   <BOUNDS type="Node" left="9840" top="12930" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Y" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="X" slicecount="1" values="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="598" srcpinname="Transform Out" dstnodeid="597" dstpinname="tTex">
    </LINK>
    </PATCH>

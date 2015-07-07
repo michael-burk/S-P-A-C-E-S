@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" systemname="randomChange" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" scrollx="1350" scrolly="1815">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" systemname="randomChange" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" scrollx="75" scrolly="1425">
    <NODE componentmode="InABox" id="0" nodename="IOBox (String)" systemname="IOBox (String)">
    <BOUNDS height="100" left="2355" top="3435" type="Node" width="100">
    </BOUNDS>
@@ -84,46 +84,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" filename="%VVVV%\lib\nodes\plugins\AnimationProcess\AnimationProcess.csproj" id="4" nodename="Process (Animation)" systemname="Process (Animation)">
-   <BOUNDS height="270" left="1515" top="4530" type="Node" width="6045">
-   </BOUNDS>
-   <BOUNDS height="14850" left="9660" top="1725" type="Window" width="14730">
-   </BOUNDS>
-   <PIN pinname="Action Name" visible="1">
-   </PIN>
-   <PIN pinname="Current Action" visible="1">
-   </PIN>
-   <PIN pinname="Start Process" visible="1">
-   </PIN>
-   <PIN pinname="Reset" visible="1">
-   </PIN>
-   <PIN pinname="Action Start" visible="1">
-   </PIN>
-   <PIN pinname="Back" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="In Action" visible="1">
-   </PIN>
-   <PIN pinname="Loop" visible="1">
-   </PIN>
-   <PIN pinname="Action End" visible="1">
-   </PIN>
-   <PIN pinname="Process End" visible="1">
-   </PIN>
-   <PIN pinname="Time" visible="1">
-   </PIN>
-   <PIN pinname="Next" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Pause" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="||">
-   </PIN>
-   <PIN pinname="Action First Frame" visible="1">
-   </PIN>
-   <PIN pinname="Action Last Frame" visible="1">
-   </PIN>
-   <PIN pinname="Action Progress" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="S (Value)" id="5" systemname="S (Value)">
    <BOUNDS type="Node" left="4740" top="7965" width="0" height="0">
    </BOUNDS>
@@ -158,20 +118,6 @@
    <PIN pinname="Default" slicecount="1" values="|0, 0|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Start Process">
-   </LINK>
-   <LINK dstnodeid="4" dstpinname="Action Name" srcnodeid="0" srcpinname="Output String">
-   </LINK>
-   <LINK dstnodeid="4" dstpinname="Time" srcnodeid="2" srcpinname="Y Output Value" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Reset" linkstyle="Bezier">
-   <LINKPOINT x="1555" y="3670">
-   </LINKPOINT>
-   <LINKPOINT x="6650" y="3665">
-   </LINKPOINT>
-   </LINK>
-   <LINK dstnodeid="4" dstpinname="Loop" srcnodeid="3" srcpinname="Y Output Value">
-   </LINK>
    <NODE id="8" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
    <PIN pinname="Descriptive Name" slicecount="1" values="doChange">
    </PIN>
@@ -182,9 +128,7 @@
    <PIN pinname="Y Input Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Action Progress" dstnodeid="7" dstpinname="Y Input Value">
-   </LINK>
-   <BOUNDS type="Window" left="11685" top="5850" width="9090" height="7665">
+   <BOUNDS type="Window" left="11730" top="5685" width="9090" height="7665">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -250,8 +194,6 @@
    <PIN pinname="Input 2" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Action First Frame" dstnodeid="14" dstpinname="Input 1">
-   </LINK>
    <LINK srcnodeid="9" srcpinname="Output" dstnodeid="14" dstpinname="Switch">
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output" dstnodeid="6" dstpinname="XY">
@@ -285,11 +227,75 @@
    <LINK srcnodeid="15" srcpinname="Output" dstnodeid="8" dstpinname="Y Input Value">
    </LINK>
    <NODE nodename="S (Value)" id="17" systemname="S (Value)">
-   <BOUNDS type="Node" left="2100" top="6975" width="0" height="0">
+   <BOUNDS type="Node" left="1425" top="6585" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Send String" slicecount="1" values="|Random Change - Action Last Frame|">
    </PIN>
    </NODE>
    <LINK srcnodeid="6" srcpinname="Y" dstnodeid="17" dstpinname="Input Value">
+   </LINK>
+   <NODE id="4" componentmode="Hidden" filename="%VVVV%\lib\nodes\plugins\AnimationProcess\AnimationProcess.csproj" nodename="Process (Animation)" systemname="Process (Animation)">
+   <BOUNDS type="Node" height="270" left="1515" top="4530" width="6045">
+   </BOUNDS>
+   <BOUNDS type="Window" height="14850" left="9660" top="1725" width="14730">
+   </BOUNDS>
+   <PIN pinname="Action Name" visible="1">
+   </PIN>
+   <PIN pinname="Current Action" visible="1">
+   </PIN>
+   <PIN pinname="Start Process" visible="1">
+   </PIN>
+   <PIN pinname="Reset" visible="1">
+   </PIN>
+   <PIN pinname="Action Start" visible="1">
+   </PIN>
+   <PIN pinname="Back" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="In Action" visible="1">
+   </PIN>
+   <PIN pinname="Loop" visible="1">
+   </PIN>
+   <PIN pinname="Action End" visible="1">
+   </PIN>
+   <PIN pinname="Process End" visible="1">
+   </PIN>
+   <PIN pinname="Time" visible="1">
+   </PIN>
+   <PIN pinname="Next" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Pause" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="||">
+   </PIN>
+   <PIN pinname="Action First Frame" visible="1">
+   </PIN>
+   <PIN pinname="Action Last Frame" visible="1">
+   </PIN>
+   <PIN pinname="Action Progress" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="4" srcpinname="Action First Frame" dstnodeid="14" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Action Progress" dstnodeid="7" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Loop">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Time" linkstyle="PolyLine">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Output String" dstnodeid="4" dstpinname="Action Name">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="1500" top="2970" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="18" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Reset">
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Start Process">
    </LINK>
    </PATCH>

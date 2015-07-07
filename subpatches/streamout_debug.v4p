@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamout_debug.v4p" systemname="streamout_debug" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamout_debug.v4p">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamout_debug.v4p" systemname="streamout_debug" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\streamout_debug.v4p" scrollx="420" scrolly="0">
    <BOUNDS type="Window" left="15510" top="6000" width="4890" height="7050">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">

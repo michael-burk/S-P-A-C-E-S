@@ -137,7 +137,27 @@
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
+   <PIN pinname="Up Edge" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Inverse Output" dstnodeid="10" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="11" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3705" top="7770" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3705" top="7770" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Fix!">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Up Edge" dstnodeid="11" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

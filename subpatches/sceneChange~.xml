@@ -156,17 +156,9 @@
    <PIN pinname="Default" slicecount="1" values="|0, 0|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Start Process">
-   </LINK>
    <LINK dstnodeid="4" dstpinname="Action Name" srcnodeid="0" srcpinname="Output String">
    </LINK>
    <LINK dstnodeid="4" dstpinname="Time" srcnodeid="2" srcpinname="Y Output Value" linkstyle="PolyLine">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="4" dstpinname="Reset" linkstyle="Bezier">
-   <LINKPOINT x="1555" y="3445">
-   </LINKPOINT>
-   <LINKPOINT x="6650" y="3440">
-   </LINKPOINT>
    </LINK>
    <LINK dstnodeid="4" dstpinname="Loop" srcnodeid="3" srcpinname="Y Output Value">
    </LINK>
@@ -241,5 +233,27 @@
    <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="12" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="12" srcpinname="OnChange" dstnodeid="1" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="S (Value)" id="13" systemname="S (Value)">
+   <BOUNDS type="Node" left="4635" top="5535" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="|SceneChange - Action Last Frame|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Y" dstnodeid="13" dstpinname="Input Value">
+   </LINK>
+   <NODE systemname="AvoidNIL (Spreads)" filename="%VVVV%\lib\nodes\modules\Spreads\AvoidNIL (Spreads).v4p" nodename="AvoidNIL (Spreads)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1485" top="2910" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Y Output Value" dstnodeid="14" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="4" dstpinname="Start Process">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="4" dstpinname="Reset">
    </LINK>
    </PATCH>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\microKorg.v4p" systemname="microKorg" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\microKorg.v4p" scrollx="990" scrolly="1140">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\microKorg.v4p" systemname="microKorg" filename="C:\Users\Michael\Desktop\S P A C E S\subpatches\microKorg.v4p" scrollx="4395" scrolly="3015">
    <BOUNDS type="Window" left="7080" top="630" width="25380" height="13140">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -379,7 +379,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="OSC1Level">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.571428571428571">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -405,7 +405,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="OSC2Level">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.135338345864661">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -555,7 +555,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="MOD">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.075187969924812">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
@@ -934,30 +934,22 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="76" systemname="IOBox (Enumerations)">
-   <BOUNDS type="Box" left="19800" top="14025" width="1590" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="19800" top="14025" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input Enum" slicecount="1" values="|Microsoft GS Wavetable Synth|">
-   </PIN>
-   </NODE>
    <NODE systemname="MidiBendOut (Devices)" filename="%VVVV%\lib\nodes\modules\Devices\MidiBendOut (Devices).v4p" nodename="MidiBendOut (Devices)" componentmode="Hidden" id="74">
-   <BOUNDS type="Node" left="18030" top="14505" width="1845" height="270">
+   <BOUNDS type="Node" left="18075" top="14250" width="1845" height="270">
    </BOUNDS>
    <BOUNDS type="Window" left="8610" top="4785" width="9000" height="5985">
    </BOUNDS>
-   <PIN pinname="Pitch Bend" slicecount="1" visible="1" values="0.499999491769237">
+   <PIN pinname="Pitch Bend" slicecount="1" visible="1" values="0.521881181225746">
    </PIN>
    <PIN pinname="Channel" visible="1" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="Midi Output Port" visible="1">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="76" srcpinname="Output Enum" dstnodeid="74" dstpinname="Midi Output Port">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="73" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="18015" top="13875" width="345" height="450">
+   <BOUNDS type="Box" left="18105" top="13185" width="345" height="450">
    </BOUNDS>
-   <BOUNDS type="Node" left="18015" top="13875" width="0" height="0">
+   <BOUNDS type="Node" left="18105" top="13185" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="2" values="0,1">
    </PIN>
@@ -1390,8 +1382,6 @@
    <PIN pinname="Size" slicecount="1" values="14">
    </PIN>
    </NODE>
-   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Pitch Bend">
-   </LINK>
    <NODE systemname="Delay (Animation)" filename="" nodename="Delay (Animation)" componentmode="Hidden" id="138">
    <BOUNDS type="Node" left="11805" top="4890" width="900" height="270">
    </BOUNDS>
@@ -1516,6 +1506,32 @@
    </NODE>
    <LINK srcnodeid="145" srcpinname="Y Output Value" dstnodeid="143" dstpinname="Switch">
    </LINK>
-   <LINK srcnodeid="145" srcpinname="Y Output Value" dstnodeid="117" dstpinname="Y Input Value">
+   <LINK srcnodeid="145" srcpinname="Y Output Value" dstnodeid="117" dstpinname="Y Input Value" linkstyle="Bezier" hiddenwhenlocked="1">
+   <LINKPOINT x="11100" y="7035">
+   </LINKPOINT>
+   <LINKPOINT x="2115" y="7035">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="146" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="18885" top="10995" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="18885" top="10995" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.09">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="146" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Pitch Bend">
+   </LINK>
+   <LINK srcnodeid="64" srcpinname="Output Enum" dstnodeid="74" dstpinname="Midi Output Port" linkstyle="Bezier">
+   <LINKPOINT x="5805" y="10508">
+   </LINKPOINT>
+   <LINKPOINT x="19860" y="10508">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="86" srcpinname="Y Output Value" dstnodeid="146" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

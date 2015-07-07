@@ -51,7 +51,7 @@
    </PIN>
    <PIN pinname="Destination Minimum" slicecount="1" visible="1" values="-1">
    </PIN>
-   <PIN pinname="Destination Maximum" slicecount="1" visible="1" values="-0.1">
+   <PIN pinname="Destination Maximum" slicecount="1" visible="1" values="-0.67">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)">
@@ -79,7 +79,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="2610" top="570" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="10,8">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="20,16">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="s">
    </PIN>
@@ -101,9 +101,9 @@
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Destination Minimum" slicecount="1" values="-1">
+   <PIN pinname="Destination Minimum" slicecount="1" values="-0.5">
    </PIN>
-   <PIN pinname="Destination Maximum" slicecount="1" values="1">
+   <PIN pinname="Destination Maximum" slicecount="1" values="0.5">
    </PIN>
    </NODE>
    <NODE systemname="Vector (2d Split)" nodename="Vector (2d Split)" componentmode="Hidden" id="7">
@@ -155,7 +155,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="4050" top="4725" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.2">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

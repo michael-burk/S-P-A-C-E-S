@@ -197,7 +197,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7380" top="1500" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="50">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="25">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -873,7 +873,5 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="60" srcpinname="Output" dstnodeid="62" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="62" srcpinname="Whole Part" dstnodeid="11" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
