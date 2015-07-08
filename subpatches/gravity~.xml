@@ -27,7 +27,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3360" top="5895" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.04">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.05">
    </PIN>
    <PIN pinname="Rows" slicecount="1" pintype="Configuration" values="3">
    </PIN>
@@ -89,7 +89,7 @@
    </PIN>
    <PIN pinname="SliceOffset" pintype="Input" visible="-1" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="X Input Value" pintype="Input" visible="-1" slicecount="1" values="0">
+   <PIN pinname="X Input Value" pintype="Input" visible="-1" slicecount="3" values="0,0,0">
    </PIN>
    <PIN pinname="X Output Value" pintype="Output" visible="-1">
    </PIN>
@@ -209,7 +209,7 @@
    <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="5">
    <BOUNDS type="Node" left="3780" top="4920" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Period" slicecount="1" values="30">
+   <PIN pinname="Period" slicecount="1" values="60">
    </PIN>
    <PIN pinname="Change" visible="1">
    </PIN>
@@ -389,7 +389,7 @@
    <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="22">
    <BOUNDS type="Node" left="1050" top="11535" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -405,8 +405,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="23" dstpinname="Input">
-   </LINK>
-   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="22" dstpinname="Input 2">
    </LINK>
    <LINK srcnodeid="11" srcpinname="Inverse Output" dstnodeid="22" dstpinname="Input 1">
    </LINK>
@@ -453,5 +451,7 @@
    <LINK srcnodeid="22" srcpinname="Output" dstnodeid="0" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="3" srcpinname="Output" dstnodeid="12" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="23" srcpinname="Output" dstnodeid="22" dstpinname="Input 2">
    </LINK>
    </PATCH>

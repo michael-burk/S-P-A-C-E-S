@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="0" scrolly="6915" locked="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="270" scrolly="2220" locked="0">
    <BOUNDS type="Window" left="9675" top="0" width="15360" height="15150">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -2133,6 +2133,8 @@
    </PIN>
    <PIN pinname="Pause" visible="1" slicecount="1" values="1">
    </PIN>
+   <PIN pinname="Reset" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <NODE systemname="Random (Value)" nodename="Random (Value)" componentmode="Hidden" id="275">
    <BOUNDS type="Node" left="14505" top="12540" width="100" height="100">
@@ -3233,7 +3235,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="12180" top="17415" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-1,0,1,0">
+   <PIN pinname="Y Input Value" slicecount="4" visible="1" values="-0.95,0,0.9,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -3931,7 +3933,7 @@
    </BOUNDS>
    <BOUNDS type="Window" left="11730" top="5685" width="9090" height="7665">
    </BOUNDS>
-   <PIN pinname="Start Process" visible="1">
+   <PIN pinname="Start Process" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="doChange" visible="1">
    </PIN>
@@ -3959,8 +3961,6 @@
    </LINKPOINT>
    <LINKPOINT x="10395" y="12310">
    </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="274" srcpinname="Change" dstnodeid="324" dstpinname="Start Process">
    </LINK>
    <LINK srcnodeid="324" srcpinname="doChange" dstnodeid="394" dstpinname="Enabled" linkstyle="Bezier" hiddenwhenlocked="1">
    <LINKPOINT x="9055" y="7848">
@@ -4152,8 +4152,6 @@
    </NODE>
    <LINK srcnodeid="439" srcpinname="Output" dstnodeid="441" dstpinname="Go To Position">
    </LINK>
-   <LINK srcnodeid="441" srcpinname="Position Out" dstnodeid="440" dstpinname="Switch">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="445" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1785" top="16350" width="480" height="480">
    </BOUNDS>
@@ -4174,29 +4172,9 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="323" srcpinname="Output" dstnodeid="274" dstpinname="Pause">
-   </LINK>
    <LINK srcnodeid="445" srcpinname="Y Output Value" dstnodeid="439" dstpinname="Set">
    </LINK>
    <LINK srcnodeid="438" srcpinname="Output" dstnodeid="437" dstpinname="Input 2">
-   </LINK>
-   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="450">
-   <BOUNDS type="Node" left="1800" top="18915" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="16" values="-0.876885903310856,-0.144342372211857,-0.779234034340175,-0.653615005016449,-0.443114096689144,-0.505657627788143,-0.540765965659825,0.00361500501644874,0.423114096689144,0.660657627788143,0.520765965659825,0.151384994983551,0.856885903310856,0.299342372211857,0.759234034340175,0.808615005016449">
-   </PIN>
-   <PIN pinname="OnChange" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" id="451">
-   <BOUNDS type="Node" left="1335" top="20325" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input" visible="1" slicecount="12" values="0">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="440" srcpinname="Output" dstnodeid="450" dstpinname="Input">
    </LINK>
    <LINK srcnodeid="437" srcpinname="Output" dstnodeid="257" dstpinname="Set" linkstyle="Bezier">
    <LINKPOINT x="9585" y="34800">
@@ -4256,18 +4234,6 @@
    </LINK>
    <LINK srcnodeid="456" srcpinname="Output String" dstnodeid="454" dstpinname="Input 2">
    </LINK>
-   <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="457">
-   <BOUNDS type="Node" left="1320" top="19365" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 2" visible="1" slicecount="2" values="0">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input 1" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Switch" visible="1" slicecount="1" values="1">
-   </PIN>
-   </NODE>
    <NODE nodename="R (Value)" id="458" systemname="R (Value)">
    <BOUNDS type="Node" left="1800" top="14955" width="0" height="0">
    </BOUNDS>
@@ -4280,12 +4246,8 @@
    </NODE>
    <LINK srcnodeid="458" srcpinname="Input Value" dstnodeid="445" dstpinname="Y Input Value">
    </LINK>
-   <LINK srcnodeid="450" srcpinname="OnChange" dstnodeid="457" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="457" srcpinname="Output" dstnodeid="451" dstpinname="Input">
-   </LINK>
    <NODE systemname="Delay (Animation)" nodename="Delay (Animation)" componentmode="Hidden" id="460">
-   <BOUNDS type="Node" left="3135" top="13455" width="100" height="100">
+   <BOUNDS type="Node" left="2040" top="14235" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -4294,21 +4256,7 @@
    </NODE>
    <LINK srcnodeid="454" srcpinname="Output" dstnodeid="460" dstpinname="Input">
    </LINK>
-   <LINK srcnodeid="460" srcpinname="Output" dstnodeid="457" dstpinname="Switch">
-   </LINK>
    <LINK srcnodeid="460" srcpinname="Output" dstnodeid="453" dstpinname="Switch">
-   </LINK>
-   <NODE systemname="AND (Boolean)" nodename="AND (Boolean)" componentmode="Hidden" id="461">
-   <BOUNDS type="Node" left="960" top="15405" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="458" srcpinname="Input Value" dstnodeid="461" dstpinname="Input 2">
-   </LINK>
-   <LINK srcnodeid="454" srcpinname="Output" dstnodeid="461" dstpinname="Input 1">
    </LINK>
    <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="466">
    <BOUNDS type="Node" left="13035" top="30150" width="100" height="100">
@@ -4409,5 +4357,45 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="462" srcpinname="Output" dstnodeid="469" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="439" srcpinname="Output" dstnodeid="440" dstpinname="Switch">
+   <LINKPOINT x="885" y="18015">
+   </LINKPOINT>
+   </LINK>
+   <NODE id="450" systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
+   <PIN pinname="OnChange" visible="1" pintype="Output">
+   </PIN>
+   <BOUNDS type="Node" left="1800" top="18915" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Descriptive Name" pintype="Configuration" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Bang On Create" pintype="Input" visible="0" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="ID" pintype="Output" visible="-1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="440" srcpinname="Output" dstnodeid="450" dstpinname="Input">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="470" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7770" top="7965" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7770" top="7965" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="274" srcpinname="Change" dstnodeid="324" dstpinname="Start Process">
    </LINK>
    </PATCH>
