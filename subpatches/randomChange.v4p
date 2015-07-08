@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" systemname="randomChange" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" scrollx="0" scrolly="600">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" systemname="randomChange" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\randomChange.v4p" scrollx="0" scrolly="3165">
    <NODE componentmode="InABox" id="0" nodename="IOBox (String)" systemname="IOBox (String)">
    <BOUNDS height="100" left="2355" top="3435" type="Node" width="100">
    </BOUNDS>
@@ -98,6 +98,8 @@
    <PIN pinname="XY" visible="1">
    </PIN>
    <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
@@ -198,8 +200,6 @@
    </LINK>
    <LINK srcnodeid="14" srcpinname="Output" dstnodeid="6" dstpinname="XY">
    </LINK>
-   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="5" dstpinname="Input Value">
-   </LINK>
    <LINK srcnodeid="14" srcpinname="Output" dstnodeid="13" dstpinname="Y Input Value">
    </LINK>
    <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="15">
@@ -297,5 +297,7 @@
    <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Reset">
    </LINK>
    <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Start Process">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="X" dstnodeid="5" dstpinname="Input Value">
    </LINK>
    </PATCH>

@@ -37,7 +37,7 @@
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Input 2" slicecount="1" visible="1" values="50">
+   <PIN pinname="Input 2" slicecount="1" visible="1" values="100">
    </PIN>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -49,7 +49,7 @@
    </PIN>
    <PIN pinname="Position Out" visible="1">
    </PIN>
-   <PIN pinname="FilterTime" slicecount="1" values="0.2">
+   <PIN pinname="FilterTime" slicecount="1" values="0">
    </PIN>
    </NODE>
    <NODE systemname="Map (Value)" nodename="Map (Value)" componentmode="Hidden" id="7">
@@ -63,7 +63,7 @@
    </PIN>
    <PIN pinname="Mapping" slicecount="1" values="Clamp">
    </PIN>
-   <PIN pinname="Destination Minimum" slicecount="1" values="0.1">
+   <PIN pinname="Destination Minimum" slicecount="1" values="0.2">
    </PIN>
    <PIN pinname="Source Maximum" slicecount="1" values="10">
    </PIN>
@@ -191,7 +191,7 @@
    </BOUNDS>
    <PIN pinname="CutOff" visible="1">
    </PIN>
-   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.323308270676692">
+   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.233082706766918">
    </PIN>
    <PIN pinname="Do Send - Enabled" visible="1">
    </PIN>

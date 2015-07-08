@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="1440" scrolly="0">
-   <BOUNDS type="Window" left="8820" top="315" width="16080" height="11100">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" systemname="SceneProgres" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\SceneProgres.v4p" scrollx="2610" scrolly="0">
+   <BOUNDS type="Window" left="10215" top="2400" width="8310" height="11100">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -17,7 +17,7 @@
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope" visible="1">
+   <PIN pinname="Input String" slicecount="12" encoded="0" visible="1" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
    </PIN>
    <PIN pinname="Output String" visible="1">
    </PIN>
@@ -171,7 +171,7 @@
    </BOUNDS>
    <BOUNDS height="2700" left="6450" top="1170" type="Box" width="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="12" values="30,30,30,30,3,3,30,30,60,60,60,60" visible="1">
+   <PIN pinname="Y Input Value" slicecount="12" visible="1" values="30,30,30,30,3,3,30,30,60,60,60,60">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -241,7 +241,7 @@
    </BOUNDS>
    <BOUNDS height="480" left="7575" top="4575" type="Box" width="480">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Show Value" slicecount="1" values="0">
    </PIN>
@@ -257,7 +257,7 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="Pause">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="1">
+   <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Pin Visibility" slicecount="1" values="False">
    </PIN>
@@ -603,7 +603,7 @@
    </BOUNDS>
    <BOUNDS height="2700" left="15765" top="5535" type="Box" width="720">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="12" values="30,30,30,30,3,3,30,30,60,60,60,60" visible="1">
+   <PIN pinname="Y Input Value" slicecount="12" visible="1" values="30,30,30,30,3,3,30,30,60,60,60,60">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -619,7 +619,7 @@
    <NODE componentmode="InABox" id="51" nodename="IOBox (String)" systemname="IOBox (String)">
    <BOUNDS height="100" left="13500" top="1410" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="2700" left="13500" top="1410" type="Box" width="1695">
+   <BOUNDS height="2670" left="13500" top="1410" type="Box" width="1935">
    </BOUNDS>
    <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
    </PIN>
@@ -627,7 +627,7 @@
    </PIN>
    <PIN pinname="Show Grid" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
+   <PIN pinname="Input String" slicecount="12" encoded="0" values="ClosedShape,|ClosedShape Turning|,DoubleShape,|DoubleShape Split|,DoubleShape,ClosedShape2,OpenShape,OpenRandomShape,DoublOpenRandomShape,ZigZag,|ZigZag Forming|,Envelope">
    </PIN>
    <PIN pinname="Output String" visible="1">
    </PIN>
@@ -711,5 +711,25 @@
    <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="7" dstpinname="Y Input Value">
    </LINK>
    <LINK srcnodeid="51" srcpinname="Output String" dstnodeid="46" dstpinname="Input Value">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="54">
+   <BOUNDS type="Node" left="18120" top="2220" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="18120" top="2220" width="795" height="930">
+   </BOUNDS>
+   <PIN pinname="Rows" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="5" values="5,10,4,7,1">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="54" srcpinname="Y Output Value" dstnodeid="53" dstpinname="Y Input Value">
    </LINK>
    </PATCH>

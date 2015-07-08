@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="1095" scrolly="7425" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="255" scrolly="5490" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
    <BOUNDS height="11115" left="13500" top="2220" type="Window" width="15000">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -517,7 +517,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7425" top="14235" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="1725" top="1725" width="11265" height="9015">
+   <BOUNDS type="Window" left="2910" top="2100" width="11160" height="10995">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -600,16 +600,16 @@
    </LINK>
    <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="601">
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="613">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="601" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="613" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="601" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
+   <LINK srcnodeid="613" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
    </LINK>
    </PATCH>

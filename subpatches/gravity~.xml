@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\gravity.v4p" systemname="gravity" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\gravity.v4p" scrollx="0" scrolly="1740">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\gravity.v4p" systemname="gravity" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\gravity.v4p" scrollx="0" scrolly="1305">
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="0" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1050" top="12450" width="480" height="480">
    </BOUNDS>
@@ -27,7 +27,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3360" top="5895" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.08">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.04">
    </PIN>
    <PIN pinname="Rows" slicecount="1" pintype="Configuration" values="3">
    </PIN>
@@ -223,7 +223,7 @@
    </PIN>
    <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Time" slicecount="1" values="8">
+   <PIN pinname="Time" slicecount="1" values="10">
    </PIN>
    </NODE>
    <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="7">
@@ -356,8 +356,6 @@
    </LINK>
    <LINK srcnodeid="16" srcpinname="Output" dstnodeid="19" dstpinname="Switch">
    </LINK>
-   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="12" dstpinname="Y Input Value">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="20" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="5640" top="10185" width="795" height="720">
    </BOUNDS>
@@ -412,8 +410,6 @@
    </LINK>
    <LINK srcnodeid="11" srcpinname="Inverse Output" dstnodeid="22" dstpinname="Input 1">
    </LINK>
-   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="0" dstpinname="Y Input Value">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="25" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="2985" top="11850" width="795" height="720">
    </BOUNDS>
@@ -453,5 +449,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="11" srcpinname="Output" dstnodeid="26" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="0" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="12" dstpinname="Y Input Value">
    </LINK>
    </PATCH>
