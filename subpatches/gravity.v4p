@@ -27,7 +27,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3360" top="5895" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.08">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" pintype="Input" values="0,0,-0.2">
    </PIN>
    <PIN pinname="Rows" slicecount="1" pintype="Configuration" values="3">
    </PIN>
@@ -209,7 +209,7 @@
    <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="5">
    <BOUNDS type="Node" left="3780" top="4920" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Period" slicecount="1" values="60">
+   <PIN pinname="Period" slicecount="1" values="80">
    </PIN>
    <PIN pinname="Change" visible="1">
    </PIN>
@@ -223,7 +223,7 @@
    </PIN>
    <PIN pinname="Reset" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Time" slicecount="1" values="10">
+   <PIN pinname="Time" slicecount="1" values="15">
    </PIN>
    </NODE>
    <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="7">

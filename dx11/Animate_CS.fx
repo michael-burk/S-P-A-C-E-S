@@ -22,7 +22,7 @@ Texture2D colorTex <string uiname="borderTex";>;
 
 SamplerState mySampler : IMMUTABLE
 {
-	Filter = MIN_MAG_MIP_LINEAR;
+	Filter = MIN_MAG_MIP_POINT;
 	AddressU = Clamp;
 	AddressV = Clamp;
 };
@@ -70,7 +70,7 @@ float1 mapRange(float1 value, float from1,float to1,float from2, float to2){
 	return  (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 }
 
-float2 mapRange(float2 value, float from1,float to1,float from2, float to2){
+float2 mapRange2(float2 value, float from1,float to1,float from2, float to2){
 	
 	return  (value - from1) / (to1 - from1) * (to2 - from2) + from2;
 }
@@ -274,13 +274,15 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		} else {
 			
 			lookup1 = float2(lookupA,lookupB);
-			val = tex1.SampleLevel(mySampler,lookup1,0);
+			val = tex1.SampleLevel(mySampler,lookup1,4);
 			
-			float3 mappedVal1= mapRange3(float3(val.b,val.r,val.g),0,1,-1,1);
+			//float3 mappedVal1= mapRange3(float3(val.b,val.r,val.g),0,1,-1,1);
+			//float3 mappedVal1= mapRange3(float3(val.r,0,(val.r+val.g+val.b)),0,1,-1,1);
+			//float3 mappedVal1= mapRange3(float3(val.r,0,val.g),0,1,-1,1);
 			
+			float3 mappedVal1= float3(mapRange(val.r,0,1,-1,1),0,mapRange(val.g,0,1,-1,1));
 
 			steerAway = float3(mappedVal1.x,0,-mappedVal1.z);
-
 			
 			
 			v += steerAway * steerAwayFactor;
@@ -322,11 +324,11 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		
 		
-		float2 lookup2 = mapRange(Output[DTid.x].pos.xz,-1,1,0,1);
-		float4 val2 = tex2.SampleLevel(mySampler,lookup2,0);
+		//float2 lookup2 = mapRange2(Output[DTid.x].pos.xz,-1,1,0,1);
+		//float4 val2 = tex2.SampleLevel(mySampler,lookup2,0);
 		
-		float3 mappedVal2= mapRange3(float3(val2.r,val2.b,val2.g),0,1,-1,1);
-		float3 swirl = float3(mappedVal2.x,0,mappedVal2.z);
+		//float3 mappedVal2= mapRange3(float3(val2.r,val2.b,val2.g),0,1,-1,1);
+		//float3 swirl = float3(mappedVal2.x,0,mappedVal2.z);
 		
 		
 		
@@ -444,7 +446,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		
 		if(collision){
 			
-			v += v*(-0.1)*friction*(Output[DTid.x].radius*5);
+			//v += v*(-0.1)*friction);
 			
 			
 			
@@ -462,7 +464,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 			}
 			
 		} else {
-			v += v*(-0.1);
+			//v += v*(-0.1);
 		}
 		
 		
@@ -486,7 +488,7 @@ void CSConstantForce( uint3 DTid : SV_DispatchThreadID)
 		}
 		
 		
-		v += swirl * swirlFactor;
+//		v += swirl * swirlFactor;
 		v += float3(gravity.x,0,gravity.z) * 0.001;
 		
 		Output[DTid.x].vel = v;

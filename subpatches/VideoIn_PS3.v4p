@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="15" scrolly="7080" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
-   <BOUNDS height="11115" left="13500" top="2220" type="Window" width="15000">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="0" scrolly="7695" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
+   <BOUNDS height="11115" left="11670" top="2640" type="Window" width="15000">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -517,7 +517,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="7425" top="14235" width="6000" height="4500">
    </BOUNDS>
-   <BOUNDS type="Window" left="5010" top="4395" width="10365" height="10095">
+   <BOUNDS type="Window" left="0" top="4935" width="9240" height="9585">
    </BOUNDS>
    <PIN pinname="Texture In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -600,16 +600,16 @@
    </LINK>
    <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="621">
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="652">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="621" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="652" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="621" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
+   <LINK srcnodeid="652" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
    </LINK>
    </PATCH>

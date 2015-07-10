@@ -1,0 +1,169 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\cornerReadback.v4p" systemname="cornerReadback" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\cornerReadback.v4p">
+   <NODE systemname="ReadBack (DX11.Buffer Region)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="ReadBack (DX11.Buffer Region)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1500" top="2850" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layout" slicecount="1" values="|float3,float3,float3,float,int,int,float,float4|">
+   </PIN>
+   <PIN pinname="Output 6" visible="1">
+   </PIN>
+   <PIN pinname="Output 7" visible="1">
+   </PIN>
+   <PIN pinname="Output 5" visible="1">
+   </PIN>
+   <PIN pinname="Element Count" visible="1">
+   </PIN>
+   <PIN pinname="Output 2XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="R (Value)" id="1" systemname="R (Value)">
+   <BOUNDS type="Node" left="2085" top="2430" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="pCount">
+   </PIN>
+   </NODE>
+   <NODE systemname="S+H (Animation)" nodename="S+H (Animation)" componentmode="Hidden" id="2">
+   <BOUNDS type="Node" left="1665" top="3540" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="3">
+   <BOUNDS type="Node" left="3540" top="1500" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3540" top="1500" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="4" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="1665" top="4260" width="795" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1665" top="4260" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Y Input Value">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|0, 0, 0|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetSlice (Spreads)" nodename="GetSlice (Spreads)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="1650" top="5415" width="2010" height="270">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Bin Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="R (Value)" id="6" systemname="R (Value)">
+   <BOUNDS type="Node" left="3585" top="4140" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="CornerPoints">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="S (Value)" id="7" systemname="S (Value)">
+   <BOUNDS type="Node" left="1650" top="6195" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="CornerPointReadback">
+   </PIN>
+   </NODE>
+   <NODE nodename="S (Value)" id="8" systemname="S (Value)">
+   <BOUNDS type="Node" left="3555" top="3120" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Send String" slicecount="1" values="DoCornerPointReadback!">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (Value)" nodename="Add (Value)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="3585" top="4860" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE id="10" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Input">
+   </PIN>
+   <BOUNDS type="Box" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1500" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Output Node" dstnodeid="0" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="Input Value" dstnodeid="0" dstpinname="Element Count">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="5" dstpinname="Index">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="7" dstpinname="Input Value">
+   </LINK>
+   <LINK srcnodeid="0" srcpinname="Output 2XYZ" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output" dstnodeid="4" dstpinname="Y Input Value">
+   </LINK>
+   <NODE id="11" systemname="IOBox (Value Advanced)" componentmode="InABox" nodename="IOBox (Value Advanced)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Y Input Value|">
+   </PIN>
+   <BOUNDS type="Box" left="3540" top="500" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3540" top="500" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="11" srcpinname="Y Output Value" dstnodeid="3" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Y Output Value" dstnodeid="8" dstpinname="Input Value">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Input Value" dstnodeid="9" dstpinname="Input 1">
+   </LINK>
+   <BOUNDS type="Window" left="-1" top="-1" width="5185" height="7695">
+   </BOUNDS>
+   <PACK Name="image" Version="0.2.0">
+   </PACK>
+   <PACK Name="addonpack" Version="33.3.0">
+   </PACK>
+   </PATCH>

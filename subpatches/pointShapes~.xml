@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="270" scrolly="2220" locked="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" systemname="pointShapes" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\pointShapes.v4p" scrollx="150" scrolly="4440" locked="0">
    <BOUNDS type="Window" left="9675" top="0" width="15360" height="15150">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
