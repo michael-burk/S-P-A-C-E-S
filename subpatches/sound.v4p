@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\sound.v4p" systemname="sound" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\sound.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\sound.v4p" systemname="sound" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\sound.v4p" scrollx="1830" scrolly="0">
    <BOUNDS type="Window" left="12270" top="3240" width="12690" height="9945">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -33,7 +33,7 @@
    </PIN>
    </NODE>
    <NODE id="5" systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden">
-   <BOUNDS type="Node" left="3810" top="6450" width="100" height="100">
+   <BOUNDS type="Node" left="3810" top="6000" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -109,7 +109,7 @@
    </PIN>
    </NODE>
    <NODE id="12" systemname="Add (Value Spectral)" nodename="Add (Value Spectral)" componentmode="Hidden" hiddenwhenlocked="0" managers="">
-   <BOUNDS type="Node" left="3825" top="5880" width="100" height="100">
+   <BOUNDS type="Node" left="3825" top="5430" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1" pintype="Output">
    </PIN>
@@ -184,26 +184,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <NODE systemname="microKorg" filename="microKorg.v4p" nodename="subpatches\microKorg.v4p" componentmode="Hidden" id="30" debug="0">
-   <BOUNDS type="Node" left="3825" top="8205" width="4740" height="270">
-   </BOUNDS>
-   <BOUNDS type="Window" left="7080" top="630" width="25380" height="13140">
-   </BOUNDS>
-   <PIN pinname="CutOff" visible="1">
-   </PIN>
-   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.233082706766918">
-   </PIN>
-   <PIN pinname="Do Send - Enabled" visible="1">
-   </PIN>
-   <PIN pinname="Pitch Bend" visible="1">
-   </PIN>
-   <PIN pinname="Evaluate" visible="1" pintype="Input">
-   </PIN>
-   <PIN pinname="Pan" visible="1" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="Init" visible="1">
-   </PIN>
-   </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="31" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7215" top="7320" width="480" height="480">
    </BOUNDS>
@@ -224,16 +204,6 @@
    <PIN pinname="X Input Value" slicecount="1" values="0">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="6" dstpinname="Go To Position">
-   </LINK>
-   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="30" dstpinname="CutOff">
-   </LINK>
-   <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Do Send - Enabled">
-   </LINK>
-   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="30" dstpinname="Pitch Bend">
-   </LINK>
-   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Evaluate">
-   </LINK>
    <LINK srcnodeid="12" srcpinname="Output" dstnodeid="5" dstpinname="Input 1">
    </LINK>
    <LINK srcnodeid="6" srcpinname="Position Out" dstnodeid="7" dstpinname="Input">
@@ -330,8 +300,122 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Init">
    </PIN>
    </NODE>
+   <NODE systemname="microKorg" filename="microKorg.v4p" nodename="subpatches\microKorg.v4p" componentmode="Hidden" id="30" debug="0">
+   <BOUNDS type="Node" left="3825" top="8205" width="4740" height="270">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2490" top="930" width="25380" height="13140">
+   </BOUNDS>
+   <PIN pinname="CutOff" visible="1">
+   </PIN>
+   <PIN pinname="Resonance" visible="1" slicecount="1" values="0.383458646616543">
+   </PIN>
+   <PIN pinname="Do Send - Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Pitch Bend" visible="1">
+   </PIN>
+   <PIN pinname="Evaluate" visible="1" pintype="Input">
+   </PIN>
+   <PIN pinname="Pan" visible="1">
+   </PIN>
+   <PIN pinname="Init" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="30" dstpinname="CutOff">
+   </LINK>
+   <LINK srcnodeid="31" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Do Send - Enabled">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Output" dstnodeid="30" dstpinname="Pitch Bend">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Evaluate">
+   </LINK>
    <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="30" dstpinname="Init">
    </LINK>
    <LINK srcnodeid="28" srcpinname="Output" dstnodeid="30" dstpinname="Pan">
+   </LINK>
+   <NODE nodename="R (Value)" id="40" systemname="R (Value)">
+   <BOUNDS type="Node" left="10890" top="4860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|SceneChange - Action Last Frame|">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="39">
+   <BOUNDS type="Node" left="10890" top="5280" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="40" srcpinname="Input Value" dstnodeid="39" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="R (Value)" id="38" systemname="R (Value)">
+   <BOUNDS type="Node" left="11175" top="4395" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="" visible="1">
+   </PIN>
+   <PIN pinname="Receive String" slicecount="1" values="|Random Change - Action Last Frame|">
+   </PIN>
+   <PIN pinname="Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="38" srcpinname="Input Value" dstnodeid="39" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="41">
+   <BOUNDS type="Node" left="11220" top="6030" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Output" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="39" srcpinname="Output" dstnodeid="41" dstpinname="Set">
+   </LINK>
+   <NODE systemname="Damper (Animation)" nodename="Damper (Animation)" componentmode="Hidden" id="42">
+   <BOUNDS type="Node" left="11295" top="6615" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Go To Position" visible="1">
+   </PIN>
+   <PIN pinname="Position Out" visible="1">
+   </PIN>
+   <PIN pinname="FilterTime" slicecount="1" values="2">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="41" srcpinname="Inverse Output" dstnodeid="42" dstpinname="Go To Position">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="43">
+   <BOUNDS type="Node" left="11160" top="7245" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="42" srcpinname="Position Out" dstnodeid="43" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="44">
+   <BOUNDS type="Node" left="3870" top="6420" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="44" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="44" srcpinname="Output" dstnodeid="6" dstpinname="Go To Position">
+   </LINK>
+   <LINK srcnodeid="43" srcpinname="Output" dstnodeid="44" dstpinname="Input 2">
    </LINK>
    </PATCH>

@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
-   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" systemname="blink" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" scrollx="2775" scrolly="615">
+   <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" systemname="blink" filename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\blink.v4p" scrollx="4950" scrolly="5250">
    <BOUNDS type="Window" left="9750" top="5100" width="12840" height="11835">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
@@ -309,7 +309,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="11580" top="11010" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="2" visible="1" values="..\assets\Sounds\2.wav,..\assets\Sounds\7.wav">
+   <PIN pinname="Input String" slicecount="2" visible="1" values="..\assets\Sounds\2.wav,..\assets\Sounds\3.wav">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="||">
    </PIN>

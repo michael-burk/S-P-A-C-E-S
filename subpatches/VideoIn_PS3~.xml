@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.3.dtd" >
    <PATCH nodename="C:\Users\Michael\Desktop\S-P-A-C-E-S\subpatches\VideoIn_PS3.v4p" scrollx="0" scrolly="7695" systemname="VideoIn_PS3" filename="C:\Users\Michael\Desktop\CL-Eye\VideoIn_PS3.v4p" locked="0">
-   <BOUNDS height="11115" left="11670" top="2640" type="Window" width="15000">
+   <BOUNDS height="11115" left="9870" top="2715" type="Window" width="15000">
    </BOUNDS>
    <PACK Name="image" Version="0.2.0">
    </PACK>
@@ -600,16 +600,16 @@
    </LINK>
    <LINK srcnodeid="584" srcpinname="Texture Out" dstnodeid="479" dstpinname="Texture In">
    </LINK>
-   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="650">
+   <NODE systemname="DX9Texture (EX9.Texture)" nodename="DX9Texture (EX9.Texture)" componentmode="Hidden" id="674">
    <BOUNDS type="Node" left="4380" top="13365" width="100" height="100">
    </BOUNDS>
    </NODE>
-   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="650" dstpinname="Source" linkstyle="VHV">
+   <LINK srcnodeid="441" srcpinname="EX9 Out" dstnodeid="674" dstpinname="Source" linkstyle="VHV">
    <LINKPOINT x="4360" y="13170">
    </LINKPOINT>
    <LINKPOINT x="3995" y="13155">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="650" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
+   <LINK srcnodeid="674" srcpinname="Texture Out" dstnodeid="584" dstpinname="Texture In">
    </LINK>
    </PATCH>
